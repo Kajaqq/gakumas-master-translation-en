@@ -6,9 +6,9 @@ import string
 
 def path_normalize_for_pk(path_str: str) -> str:
     """
-    将像 'produceDescriptions[0].produceDescriptionType'
-    转换成 'produceDescriptions.produceDescriptionType'
-    只去掉 [数字] 这一层，以便和 primaryKeys 匹配。
+    Converts something like 'produceDescriptions[0].produceDescriptionType'
+    to 'produceDescriptions.produceDescriptionType'
+    removing only the [number] layer so it matches primaryKeys.
     """
     return re.sub(r"\[\d+\]", "", path_str)
 
@@ -16,10 +16,10 @@ def check_need_export(v: str) -> bool:
     if not v:
         return False
 
-    # 定义允许的字符集
+    # Define the allowed character set
     allowed_chars = string.ascii_letters + string.digits + string.punctuation + " "
 
-    # 检查是否所有字符都在允许的字符集中
+    # Check if all characters are in the allowed character set
     for char in v:
         if char not in allowed_chars:
             return True
@@ -29,16 +29,16 @@ def check_need_export(v: str) -> bool:
 
 def collect_translatable_text(data_obj, primary_keys):
     """
-    遍历 data_obj（即单条记录），收集需要翻译的文本信息。
-    返回形如 { fullKey: textValue, ... } 的字典。
+    Traverse data_obj (i.e. a single record) and collect the text information that needs to be translated.
+    Return a dictionary of the form { fullKey: textValue, ... }.
     """
 
     result = {}
 
-    # 1) 把 primaryKeys 存到一个 set 里，后续好快速判断
+    # 1) Store primaryKeys in a set for quick judgment later
     pk_set = set(primary_keys)
 
-    # 2) 构建 baseKey (把所有主键值拼在一起)
+    # 2) Build baseKey (put all primary key values together)
     pk_parts = []
     for pk in primary_keys:
         if "." not in pk:
@@ -58,18 +58,18 @@ def collect_translatable_text(data_obj, primary_keys):
 
     baseKey = "|".join(pk_parts)
 
-    # 3) 递归遍历，找出非主键的、非空的string字段
+    # 3) Recursively traverse to find non-primary key, non-empty string fields
     def traverse(obj, prefix=""):
         if isinstance(obj, dict):
             for k, v in obj.items():
                 new_prefix = prefix + "." + k if prefix else k
                 if isinstance(v, str):
-                    # 如果字符串为空，则跳过
+                    # If the string is empty, skip it
                     if not check_need_export(v):
                         continue
-                    # 处理数组index => produceDescriptions[0].xxx -> produceDescriptions.xxx
+                    # Process array index => produceDescriptions[0].xxx -> produceDescriptions.xxx
                     normalized_path = path_normalize_for_pk(new_prefix)
-                    # 如果它是 pk，就跳过
+                    # If it is pk, skip
                     if normalized_path not in pk_set:
                         fullKey = baseKey + "|" + new_prefix
                         result[fullKey] = v
@@ -79,12 +79,12 @@ def collect_translatable_text(data_obj, primary_keys):
                     else:
                         new_v = "[LA_N_F]".join(v)
                         new_v = f"[LA_F]{new_v}"
-                        # 如果字符串为空，则跳过
+                        # If the string is empty, skip it
                         if not check_need_export(new_v):
                             continue
-                        # 处理数组index => produceDescriptions[0].xxx -> produceDescriptions.xxx
+                        # Process array index => produceDescriptions[0].xxx -> produceDescriptions.xxx
                         normalized_path = path_normalize_for_pk(new_prefix)
-                        # 如果它是 pk，就跳过
+                        # If it is pk, skip
                         if normalized_path not in pk_set:
                             fullKey = baseKey + "|" + new_prefix
                             result[fullKey] = new_v
@@ -102,19 +102,19 @@ def collect_translatable_text(data_obj, primary_keys):
 
 def ex_main(input_json, output_json):
     if not os.path.isfile(input_json):
-        print(f"找不到输入文件: {input_json}")
+        print(f"Input file not found: {input_json}")
         sys.exit(1)
 
     with open(input_json, "r", encoding="utf-8") as f:
         root = json.load(f)
 
     if "rules" not in root or "primaryKeys" not in root["rules"]:
-        print("缺少 rules.primaryKeys，可能不是预期结构")
+        print("Missing rules.primaryKeys, may not be the expected structure")
         sys.exit(1)
 
     primary_keys = root["rules"]["primaryKeys"]
     if "data" not in root or not isinstance(root["data"], list):
-        print("缺少 data 数组，可能不是预期结构")
+        print("The data array is missing and may not be the expected structure.")
         sys.exit(1)
 
     export_dict = {}
@@ -125,10 +125,10 @@ def ex_main(input_json, output_json):
     with open(output_json, "w", encoding="utf-8") as out:
         json.dump(export_dict, out, ensure_ascii=False, indent=2)
 
-    print(f"导出完成: {output_json} (共 {len(export_dict)} 条)")
+    print(f"Export completed: {output_json} (total {len(export_dict)} entries)")
 
 def main():
-    orig_dir = input("原json文件夹: ") or "gakumasu-diff/json"
+    orig_dir = sys.argv[1] if len(sys.argv) > 1 else "gakumasu-diff/json"
     if not os.path.isdir("./exports"):
         os.mkdir("./exports")
 

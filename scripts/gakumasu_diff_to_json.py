@@ -285,15 +285,15 @@ TestMode = False
 
 class CustomLoader(yaml.SafeLoader):
     def __init__(self, stream):
-        # 重写初始化以支持特定的控制字符
+        # Override initialization to support specific control characters
         super().__init__(stream)
 
     def check_printable(self, data):
         """
-        重写检查函数以允许不可打印字符（如 #x000b）
+        Rewrite the check function to allow for non-printable characters (like #x000b)
         """
         for char in data:
-            if char == "\x0b":  # 允许垂直制表符
+            if char == "\x0b":  # Allow vertical tabs
                 continue
             if not super().check_printable(char):
                 return False
@@ -302,28 +302,28 @@ class CustomLoader(yaml.SafeLoader):
 
 def save_json(data: list, name: str):
     """
-    主流程:
-      1. 从 primary_key_rules[name] 中取出主键列表 (primary_keys) 和 非主键列表 (other_keys)。
-      2. 仅保留这些字段（拆分 '.' 处理嵌套/数组）。
-      3. 如果 TestMode = True，则对「非主键列表」中的字符串或字符串数组，追加 "TEST"。
+    Main process:
+    1. Take the primary key list (primary_keys) and non-primary key list (other_keys) from primary_key_rules[name].
+    2. Keep only these fields (split '.' to handle nested/arrays).
+    3. If TestMode = True, append "TEST" to the string or string array in the "non-primary key list".
     """
     if not data:
         return
 
-    # 取出该 name 对应的规则
+    # Get the rule corresponding to the name
     rule = primary_key_rules.get(name)
     if not rule or len(rule) < 2:
         return
 
-    primary_keys = rule[0]  # 第一列表 (主键)
-    other_keys = rule[1]    # 第二列表 (可能追加 TEST)
+    primary_keys = rule[0]  # First column (primary key)
+    other_keys = rule[1]    # Second list (TEST may be added)
 
-    # 合并所有需要保留的字段（第一项 + 第二项）
+    # Merge all fields to be retained (first item + second item)
     all_keys = primary_keys + other_keys
 
     processed_data = []
     for record in data:
-        # 为当前 record 构造一个新对象，只包含需要的字段
+        # Construct a new object for the current record, containing only the required fields
         filtered_record = filter_record_fields(
             record,
             all_keys,
@@ -332,7 +332,7 @@ def save_json(data: list, name: str):
         )
         processed_data.append(filtered_record)
 
-    # 生成最终的 JSON 结构
+    # Generate the final JSON structure
     result = {
         "rules": {
             "primaryKeys": primary_keys
@@ -340,7 +340,7 @@ def save_json(data: list, name: str):
         "data": processed_data
     }
 
-    # 写入 JSON 文件
+    # Write JSON files
     os.makedirs('./gakumasu-diff/json', exist_ok=True)
     with open(f'gakumasu-diff/json/{name}.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=4)
@@ -350,28 +350,28 @@ def save_json(data: list, name: str):
 def filter_record_fields(record: dict, field_paths: list,
                          primary_keys: list, other_keys: list) -> dict:
     """
-    给定一条原始记录 record，以及需要保留的字段路径列表 field_paths，
-    返回一个只包含这些字段（及其嵌套结构）的新字典。
-    若路径在 other_keys 且 TestMode = True，则对字符串或字符串列表添加 "TEST"。
+    Given an original record, and a list of field paths field_paths to keep,
+    return a new dictionary containing only those fields (and their nested structure).
+    If the path is in other_keys and TestMode = True, add "TEST" to the string or list of strings.
     """
     new_record = {}
     for path_str in field_paths:
         path = path_str.split(".")  # "descriptions.type" -> ["descriptions", "type"]
         value = get_nested_value(record, path)
         if value is not None:
-            # 若属于非主键列表 & TestMode = True，对字符串/字符串列表值追加 "TEST"
+            # Append “TEST” to string/string list value if it belongs to a non-primary key list & TestMode = True
             if TestMode and (path_str in other_keys):
                 value = transform_value_for_test_mode(value)
-            # 将获取到的 value 合并到 new_record 中，保持相同嵌套结构
+            # Merge the fetched value into new_record, keeping the same nested structure
             merge_nested_value(new_record, path, value)
     return new_record
 
 
 def get_nested_value(obj, path: list):
     """
-    从 obj 中按照 path 依次深入，获取对应的 value。
-    如果中间任何一步不存在，则返回 None。
-    若遇到列表，则对列表中每个对象做同样的处理，并返回一个同样长度的列表。
+    Go deep into obj according to path and get the corresponding value.
+    If any step in the middle does not exist, return None.
+    If a list is encountered, do the same process for each object in the list and return a list of the same length.
     """
     if not path:
         return obj
@@ -381,15 +381,15 @@ def get_nested_value(obj, path: list):
         return None
 
     sub_obj = obj[key]
-    # 如果仅剩最后一层路径，直接返回
+    # If only the last layer of path is left, return directly
     if len(path) == 1:
         return sub_obj
 
-    # 如果是字典，继续深入
+    # If it is a dictionary, continue to go deeper
     if isinstance(sub_obj, dict):
         return get_nested_value(sub_obj, path[1:])
 
-    # 如果是列表，则对每个元素做同样的处理，并返回一个列表
+    # If it is a list, do the same process for each element and return a list
     if isinstance(sub_obj, list):
         results = []
         for item in sub_obj:
@@ -397,59 +397,59 @@ def get_nested_value(obj, path: list):
                 val = get_nested_value(item, path[1:])
                 results.append(val)
             else:
-                # 如果列表里不是 dict，就无法再深入，只能返回 None
+                # If the list is not a dict, you can't go any deeper and can only return None
                 results.append(None)
         return results
 
-    # 其他情况（数字、字符串等）无法继续深入
+    # Other cases (numbers, strings, etc.) cannot be further explored
     return None
 
 
 def merge_nested_value(target_dict: dict, path: list, value):
     """
-    将 value 根据 path 的层级结构，合并到 target_dict 中。
-    若某级是列表，则需要在 target_dict 中也构造出相同长度的列表，再逐项合并。
+    Merge value into target_dict according to the hierarchical structure of path.
+    If a level is a list, you need to construct a list of the same length in target_dict and then merge them item by item.
     """
     if not path:
         return
 
     key = path[0]
 
-    # 如果只剩最后一级 key，则直接写入
+    # If only the last level of key is left, write it directly
     if len(path) == 1:
         target_dict[key] = value
         return
 
-    # 如果 value 是个列表，说明当前层是列表，需要特殊处理
+    # If value is a list, it means the current layer is a list and needs special processing
     if isinstance(value, list):
-        # 如果 target_dict[key] 不存在或不是列表，则先初始化为空列表
+        # If target_dict[key] does not exist or is not a list, initialize it to an empty list first
         if key not in target_dict or not isinstance(target_dict[key], list):
             target_dict[key] = [None] * len(value)
 
-        # 遍历 value 中的每一项，递归合并
+        # Traverse each item in value and merge recursively
         for i, v in enumerate(value):
             if v is None:
-                continue  # 跳过 None
-            # 如果 target_dict[key][i] 还没创建，就初始化为 dict
+                continue  # Skip None
+            # If target_dict[key][i] has not been created yet, initialize it to dict
             if target_dict[key][i] is None:
                 target_dict[key][i] = {}
-            # 继续深入合并
+            # Continue deep merging
             merge_nested_value(target_dict[key][i], path[1:], v)
         return
 
-    # 否则，如果 target_dict[key] 不存在或不是字典，则初始化为字典
+    # Otherwise, if target_dict[key] does not exist or is not a dictionary, it is initialized to a dictionary
     if key not in target_dict or not isinstance(target_dict[key], dict):
         target_dict[key] = {}
 
-    # 递归处理剩余路径
+    # Recursively process the remaining paths
     merge_nested_value(target_dict[key], path[1:], value)
 
 
 def transform_value_for_test_mode(value):
     """
-    如果是字符串，追加 "TEST"。
-    如果是字符串列表，为列表中的每项追加 "TEST"。
-    其他类型不变。
+    If it is a string, append "TEST".
+    If it is a list of strings, append "TEST" to each item in the list.
+    Other types remain unchanged.
     """
     if isinstance(value, str):
         return value + "TEST"
@@ -463,11 +463,11 @@ process_list = None
 
 def convert_yaml_types(folder_path="./gakumasu-diff/orig"):
     """
-    遍历指定文件夹中的所有 YAML 文件，加载它们的内容，并打印每个文件的类型。
-    自动替换 YAML 文件中的制表符为空格。
+    Iterates over all YAML files in a specified folder, loads their contents, and prints the type of each file.
+    Automatically replaces tabs in YAML files with spaces.
     """
     if not os.path.isdir(folder_path):
-        print(f"路径 '{folder_path}' 不是一个有效的文件夹。")
+        print(f"The path '{folder_path}' is not a valid folder.")
         return
 
     for root, _, files in os.walk(folder_path):
@@ -484,13 +484,13 @@ def convert_yaml_types(folder_path="./gakumasu-diff/orig"):
 
                 print("Generating", file_path, f"to json. ({n}/{total})")
                 try:
-                    # 预处理文件：替换制表符为 4 个空格
+                    # Preprocess file: replace tabs with 4 spaces
                     with open(file_path, 'r', encoding='utf-8') as f:
                         content = f.read()
-                    # content = content.replace('\t', '    ')  # 替换制表符
-                    content = content.replace(": \t", ": \"\t\"")  # 替换制表符
+                    # content = content.replace('\t', '    ')  # Replace tab characters
+                    content = content.replace(": \t", ": \"\t\"")  # Replace tab characters
 
-                    # 解析 YAML 内容
+                    # Parsing YAML content
                     # data = yaml.safe_load(content)
                     data = yaml.load(content, CustomLoader)
                     save_json(data, file[:-5])
@@ -498,7 +498,7 @@ def convert_yaml_types(folder_path="./gakumasu-diff/orig"):
                     # print(f"文件: {file_path}")
                     # print(f"类型: {type(data)}\n")
                 except Exception as e:
-                    print(f"加载文件 {file_path} 时出错: {e}")
+                    print(f"Error occured while loading file {file_path}: {e}")
 
 
 if __name__ == '__main__':

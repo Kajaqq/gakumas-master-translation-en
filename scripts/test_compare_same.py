@@ -4,18 +4,18 @@ import os
 
 def compare_json_folders(folder1, folder2):
     """
-    比较两个文件夹中的 JSON 文件内容是否一致。
+    Compare the contents of JSON files in two folders for consistency.
 
     Args:
-        folder1 (str): 第一个文件夹路径。
-        folder2 (str): 第二个文件夹路径。
+    folder1 (str): The path to the first folder.
+    folder2 (str): The path to the second folder.
 
     Returns:
-        dict: 返回一个字典，包含比较结果：
-            - "matched": 两个文件夹中内容一致的文件列表。
-            - "mismatched": 内容不同的文件列表。
-            - "missing_in_folder2": 在 folder1 中存在但在 folder2 中不存在的文件列表。
-            - "missing_in_folder1": 在 folder2 中存在但在 folder1 中不存在的文件列表。
+    dict: Returns a dictionary containing the comparison results:
+    - "matched": A list of files with the same content in the two folders.
+    - "mismatched": A list of files with different content.
+    - "missing_in_folder2": A list of files that exist in folder1 but not in folder2.
+    - "missing_in_folder1": A list of files that exist in folder2 but not in folder1.
     """
     result = {
         "matched": [],
@@ -24,15 +24,15 @@ def compare_json_folders(folder1, folder2):
         "missing_in_folder1": []
     }
 
-    # 获取两个文件夹中的 JSON 文件名
+    # Get the JSON file names in two folders
     files1 = {f for f in os.listdir(folder1) if f.endswith('.json')}
     files2 = {f for f in os.listdir(folder2) if f.endswith('.json')}
 
-    # 找出仅存在于一个文件夹中的文件
+    # Find files that exist only in one folder
     result["missing_in_folder2"] = list(files1 - files2)
     result["missing_in_folder1"] = list(files2 - files1)
 
-    # 比较两个文件夹中共有文件的内容
+    # Compare the contents of the common files in two folders
     common_files = files1 & files2
 
     for file_name in common_files:
@@ -54,8 +54,8 @@ def compare_json_folders(folder1, folder2):
     return result
 
 
-folder1 = input("文件夹1: ")
-folder2 = input("文件夹2: ")
+folder1 = input("Folder 1: ")
+folder2 = input("Folder 2: ")
 comparison_result = compare_json_folders(folder1, folder2)
 
 print("Matched files:", comparison_result["matched"])

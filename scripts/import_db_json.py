@@ -4,12 +4,12 @@ import os
 
 def fill_back_translations(data_obj, primary_keys, trans_map):
     """
-    data_obj 是原本地化数据的一条记录；
-    trans_map 是第三方软件翻译后的 { fullKey: translatedValue }
-    根据 baseKey(由主键拼成) + 路径 进行匹配，将翻译填充回 data_obj。
+    data_obj is a record of the original localized data;
+    trans_map is the { fullKey: translatedValue } translated by third-party software
+    Match based on baseKey (composed of primary key) + path, and fill the translation back into data_obj.
     """
 
-    # 先拼出 baseKey
+    # Get baseKey first
     pk_parts = []
     for pk in primary_keys:
         if "." not in pk:
@@ -28,7 +28,7 @@ def fill_back_translations(data_obj, primary_keys, trans_map):
                 pk_parts.append("")
     baseKey = "|".join(pk_parts)
 
-    # 遍历 data_obj，若找到 key= baseKey|xxx，替换其内容
+    # Traverse data_obj, if key= base Key|xxx is found, replace its content
     def traverse(obj, prefix=""):
         if isinstance(obj, dict):
             for k, v in obj.items():
@@ -61,10 +61,10 @@ def fill_back_translations(data_obj, primary_keys, trans_map):
 
 def import_main(base_json, translated_json, output_json):
     if not os.path.isfile(base_json):
-        print(f"找不到 base 文件: {base_json}")
+        print(f"Cannot find base file: {base_json}")
         sys.exit(1)
     if not os.path.isfile(translated_json):
-        print(f"找不到翻译文件: {translated_json}")
+        print(f"Cannot find translation file: {translated_json}")
         sys.exit(1)
 
     with open(base_json, "r", encoding="utf-8") as f1:
@@ -74,23 +74,23 @@ def import_main(base_json, translated_json, output_json):
         trans_map = json.load(f2)  # {"key": "translated text", ...}
 
     if "rules" not in root or "primaryKeys" not in root["rules"]:
-        print("缺少 rules.primaryKeys，可能不是预期结构")
+        print("Missing rules.primaryKeys, does your json have proper structure?")
         sys.exit(1)
 
     primary_keys = root["rules"]["primaryKeys"]
     if "data" not in root or not isinstance(root["data"], list):
-        print("缺少 data 数组，可能不是预期结构")
+        print("The data array is missing ,does your json have proper structure?")
         sys.exit(1)
 
-    # 遍历 data 数组，一条一条地把翻译填回去
+    # Traverse the data array and fill in the translations one by one
     for row in root["data"]:
         fill_back_translations(row, primary_keys, trans_map)
 
-    # 写出新的 json
+    # Write new json
     with open(output_json, "w", encoding="utf-8") as out:
         json.dump(root, out, ensure_ascii=False, indent=2)
 
-    print(f"合并完成: {output_json}")
+    print(f"Merge completed: {output_json}")
 
 
 def main(base_dir, translated_dir, output_dir="merged"):
@@ -108,6 +108,6 @@ def main(base_dir, translated_dir, output_dir="merged"):
 
 if __name__ == "__main__":
     main(
-        base_dir=input("源json文件夹: ") or "gakumasu-diff/json",
-        translated_dir=input("预翻译完成文件夹: ") or "pretranslate_todo/translated_out"
+        base_dir=sys.argv[1] if len(sys.argv) > 1  else "gakumasu-diff/json",
+        translated_dir=sys.argv[2] if len(sys.argv) > 2 else "pretranslate_todo/translated_out"
     )
