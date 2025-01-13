@@ -1,33 +1,34 @@
-# gakumas-master-translation
+# gakumas-master-translation-en
 
 
-简体中文 | [English](README_EN.md)
-
-
-
-# 使用脚本更新
-
- - `make update` 更新 MasterDB 的 `orig` 和 `json` 文件
- - `make gen-todo` 生成待翻译文件到 `pretranslate_todo/todo` 文件夹内
-   - 需要手动将 `pretranslate_todo/todo` 内的文件复制到 `gakumas-generic-strings-translation/working/todo` 内，然后在 `gakumas-generic-strings-translation` 内运行 `make pretranslate`
-   - 翻译完成后将 `gakumas-generic-strings-translation/working/new` 内的文件复制到 `pretranslate_todo/todo/new` 内。若 `new` 文件夹不存在，则手动创建
- - `make merge` 将 `pretranslate_todo/todo/new` 内的文件合并到 `data`
- - 全部处理完成后，请手动清空 `pretranslate_todo` 文件夹
+[简体中文](README_CN.md) | English
 
 
 
-# 手动运行
+# Updating with Scripts
 
-## 全新翻译流程
+- Use `make update` to update the MasterDB (`orig` and `json`) file from gakumas-diff
+- Use `make export-db` to export the database files - this should only be run once to generate origin files
+- Use `make gen-todo` to generate files to be translated into the `pretranslate_todo/todo` folder.
+  - Manually copy the files from `pretranslate_todo/todo` into `gakumas-generic-strings-translation/working/todo`. Then, run `make pretranslate` in the `gakumas-generic-strings-translation`.
+  - After translation is complete, copy the files from `gakumas-generic-strings-translation/working/new` into `pretranslate_todo/todo/new`. If the `new` folder does not exist, create it manually.
+- Use `make merge` to merge the files from `pretranslate_todo/todo/new` into `data`.
+- Once all processes are completed, please manually clear the `pretranslate_todo` folder.
 
- - 首先执行 `gakumasu_diff_to_json.py` 将 gakumasu-diff 这个仓库的 yaml 转为插件能识别的 json，这时候 json 内容是日文原文
- - 然后执行 `export_db_json.py` 将第一步生成的 json 转为 `key: 日文原文` 形式
- - 运行 `pretranslate_process.py`，选 `1`，将 `key: 日文原文` 转为 `日文: ""` 用于 pretranslate
- - 然后自行 pretranslate，得到 `日文: 中文` 文件
- - 完成后再次运行 `pretranslate_process.py`，选 `3`，将 pretranslate 后的 `日文: 中文` 转为 `key: 中文` 文件
- - 最后运行 `import_db_json.py` 将 `key: 中文` 文件转为插件能识别的 json 文件
 
-## 基于旧文件更新
 
-1. 生成 todo 文件: 运行 `pretranslate_process.py` 选 2。旧的翻译数据在 `data` 内，新的文件使用 `gakumasu_diff_to_json` 生成
-2. 预翻译完成后，将新文件放入 `todo/new` 内，运行 `pretranslate_process.py` 选 4
+# Manual Execution
+
+## Full Translation Workflow
+
+1. First, run `gakumasu_diff_to_json.py` to convert the YAML files from the `gakumasu-diff` repository into JSON files readable by the plugin. At this stage, the JSON contains the original Japanese text.
+2. Run `export_db_json.py` to convert the generated JSON into the `key: original Japanese text` format.
+3. Execute `pretranslate_process.py` and select option `1` or add `--export` to convert `key: original Japanese text` into `Japanese: ""` format for pre-translation.
+4. Perform translation manually to obtain a `Japanese: English` file.
+5. Once completed, run `pretranslate_process.py` again and select option `3` to convert the pre-translated `Japanese: English` file into the `key: English` format.
+6. Finally, execute `import_db_json.py` to convert the `key: English` file into a JSON file readable by the plugin.
+
+## Updating Based on Old Files
+
+1. Generate the `todo` files by running `pretranslate_process.py` and selecting option `2` or adding `--gen-todo`. The old translation data is located in the `data` directory, and new files are generated using `gakumasu_diff_to_json`.
+2. After pre-translation is complete, place the new files into `todo/new` and run `pretranslate_process.py`, selecting option `4` or adding `--merge`.

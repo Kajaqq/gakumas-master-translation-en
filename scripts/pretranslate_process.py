@@ -170,9 +170,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--gen_todo', action='store_true')
     parser.add_argument('--merge', action='store_true')
+    parser.add_argument('--export', action='store_true')
     args = parser.parse_args()
 
-    if (not args.gen_todo) and (not args.merge):
+
+    if not vars(args):
         do_idx = input("[1] Export all to files to be translated\n"
                        "[2] Compare and update to generate todo files\n"
                        "[3] Convert translation files (jp:en) back to key-value json\n"
@@ -183,6 +185,8 @@ def main():
         return
     elif args.merge:
         do_idx = "4"
+    elif args.export:
+        do_idx ='1'
     else:
         raise RuntimeError("Invalid Arguments.")
 
