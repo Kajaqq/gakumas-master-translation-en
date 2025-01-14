@@ -26,7 +26,7 @@ def read_json(filepath):
     except json.JSONDecodeError:
         raise json.JSONDecodeError(f"Invalid JSON format in {filepath}")
 
-def write_csv(filepath, data, header):
+def write_csv(filepath, data, header=CSV_HEADER):
     """Writes data to a CSV file.
 
     Args:
