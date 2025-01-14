@@ -2,6 +2,7 @@ import os
 import json
 import shutil
 import argparse
+import sys
 
 import import_db_json
 import export_db_json
@@ -177,7 +178,7 @@ def main():
     args = parser.parse_args()
 
 
-    if not vars(args):
+    if len(sys.argv)==1:
         do_idx = input("[1] Export all to files to be translated\n"
                        "[2] Compare and update to generate todo files\n"
                        "[3] Convert translation files (jp:en) back to key-value json\n"
@@ -206,7 +207,7 @@ def main():
     elif do_idx == "3":
         pretranslated_to_kv_files(
             root_dir=input("Input export folder(or press enter for default): ") or "exports",
-            translated_dir=input("Input translated(jp:en format) folder: ")
+            translated_dir=input("Input translated(jp:en format) folder(or press enter for default): ") or "pretranslate_todo/full_out"
         )
 
     elif do_idx == "4":
