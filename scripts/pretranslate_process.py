@@ -23,15 +23,15 @@ def values_to_keys(root_dir, output_type='json'):
             for _, v in orig_data.items():
                 data[v] = ""
 
-            output_dir = os.path.join(output_dir, name)
+            output_file = os.path.join(output_dir, name)
             if output_type == 'json':
-                write_json(output_dir, data)
+                write_json(output_file, data)
 
             elif output_type == 'csv':
-                csv_file = output_dir.replace('.json', '.csv')
+                csv_file = output_file.replace('.json', '.csv')
                 write_csv(csv_file, data)
 
-            print("saved file", name)
+            print("Extracted file", name[:-4]+output_type)
 
 
 def pretranslated_to_kv_files(

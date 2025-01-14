@@ -1,12 +1,12 @@
 # gakumas-master-translation-en
 
-
+## WARNING: The Chinese version isn't up to date with this repo
 [简体中文](README_CN.md) | English
-
 
 
 # Updating with Scripts
 
+### For Windows use the .bat files instead of make
 - Use `make update` to update the MasterDB (`orig` and `json`) file from gakumas-diff
 - Use `make export-db` to export the database files - this should only be run once to generate origin files
 - Use `make gen-todo` to generate files to be translated into the `pretranslate_todo/todo` folder.
@@ -32,3 +32,10 @@
 
 1. Generate the `todo` files by running `pretranslate_process.py` and selecting option `2` or adding `--gen-todo`. The old translation data is located in the `data` directory, and new files are generated using `gakumasu_diff_to_json`.
 2. After pre-translation is complete, place the new files into `todo/new` and run `pretranslate_process.py`, selecting option `4` or adding `--merge`.
+
+## Converting json <---> CSV
+- This toolkit supports seamless conversion for the `origin:translated` files between CSV and json 
+- You can set the output of `pretranslate_process.py` by running it with `--export` for json and `--export_csv` for csv
+- You can also change the formats with `csv_json_bridge.py input output` where input and output can be a csv/json pair or a json/csv pair.
+- Be aware though that `pretranslate_process.py` will only accept back a json file so every csv file will need to be converted back into .json format
+- For mass converting csv back to json use `csv_to_json.bat` or `csv_json_bridge.py --mass_convert`

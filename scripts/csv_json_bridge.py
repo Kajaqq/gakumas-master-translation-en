@@ -2,6 +2,7 @@ import json
 import csv
 import sys
 import pathlib
+from concurrent.futures import ThreadPoolExecutor
 
 CSV_HEADER = ['source', 'translatedstr']
 
@@ -21,27 +22,31 @@ def read_json(filepath):
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
+
     except FileNotFoundError:
         raise FileNotFoundError(f"JSON file not found at {filepath}")
     except json.JSONDecodeError:
         raise json.JSONDecodeError(f"Invalid JSON format in {filepath}")
 
-def write_csv(filepath, data, header=CSV_HEADER):
+def write_csv(filepath, data:dict, header=None):
     """Writes data to a CSV file.
 
     Args:
         filepath (str): The path to the CSV file.
-        data (list): A list of dictionaries representing the rows.
+        data (dict): A list of dictionaries representing the rows.
         header (list): A list of strings representing the header.
 
     Raises:
         IOError: If there is an error writing to the file.
     """
+    if header is None:
+        header = CSV_HEADER
     try:
-        with open(filepath, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.DictWriter(f, fieldnames=header)
-            writer.writeheader()
-            writer.writerows(data)
+        with open(filepath, 'w', newline='', encoding='utf-8') as csv_data:
+            writer = csv.writer(csv_data)
+            writer.writerow(header)
+            for key, value in data.items():
+                writer.writerow([key, value])
     except IOError as e:
         raise IOError(f"Error writing to CSV file {filepath}: {e}")
 
@@ -110,15 +115,63 @@ def csv_to_json(csv_filepath, json_filepath):
             json_data[row['source']] = ''  # Handle missing 'translatedstr' as empty string
     write_json(json_filepath, json_data)
 
-if __name__ == '__main__':
-    first_file = sys.argv[1] if len(sys.argv) > 1 else None
-    second_file = sys.argv[2] if len(sys.argv) > 2 else None
-    first_file_extension = pathlib.Path(first_file).suffix
-    second_file_extension = pathlib.Path(second_file).suffix
-    if first_file_extension != second_file_extension:
-        if first_file_extension == '.json' and second_file_extension == '.csv':
-            json_to_csv(first_file, second_file)
-        elif first_file_extension == '.csv' and second_file_extension == '.json':
-            csv_to_json(first_file, second_file)
+def mass_csv_to_json(csv_folder, json_folder=None):
+    """
+    Converts all CSV files in a folder to JSON files.
+
+    Args:
+        csv_folder (str): Path to the folder containing CSV files.
+        json_folder (str, optional): Path to the folder where JSON files will be saved.
+                                     If None, uses the same folder as csv_folder.
+    """
+    csv_folder_path = pathlib.Path(csv_folder)
+    json_folder_path = pathlib.Path(json_folder) if json_folder else csv_folder_path
+
+    if not csv_folder_path.is_dir():
+        raise ValueError(f"The provided CSV folder path is not a directory: {csv_folder}")
+
+    csv_files = list(csv_folder_path.glob("*.csv"))
+
+    if not csv_files:
+        print(f"No CSV files found in {csv_folder}")
+        return
+
+    with ThreadPoolExecutor() as executor:
+        for csv_file in csv_files:
+            json_file = json_folder_path / csv_file.with_suffix(".json").name
+            print(f'Converting {csv_file} to JSON...')
+            executor.submit(csv_to_json, str(csv_file), str(json_file))
+
+def main():
+    """
+    Main function to handle command line arguments and perform file conversion.
+    """
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "--mass_convert":
+            input_folder = sys.argv[2] if len(sys.argv) > 2 else "./pretranslate_todo/full_out"
+            output_folder = sys.argv[3] if len(sys.argv) > 3 else None
+            mass_csv_to_json(input_folder, output_folder)
+        else:
+            first_file = pathlib.Path(sys.argv[1])
+            second_file = pathlib.Path(sys.argv[2]) if len(sys.argv) > 2 else None
+
+            if not first_file.exists():
+                raise FileNotFoundError(f"The first file does not exist: {first_file}")
+            if second_file and not second_file.exists():
+                raise FileNotFoundError(f"The second file does not exist: {second_file}")
+
+            if second_file and first_file.suffix != second_file.suffix:
+                if first_file.suffix == ".json" and second_file.suffix == ".csv":
+                    json_to_csv(str(first_file), str(second_file))
+                elif first_file.suffix == ".csv" and second_file.suffix == ".json":
+                    csv_to_json(str(first_file), str(second_file))
+                else:
+                    raise ValueError("Invalid file combination for conversion.")
+            else:
+                raise ValueError("The provided files have the same extensions or second file is not provided.")
     else:
-        raise ValueError(f"The provided files have the same extensions!")
+        print("No arguments provided. Please provide file paths or --mass_convert flag.")
+
+if __name__ == "__main__":
+    main()
+    pass

@@ -482,7 +482,7 @@ def convert_yaml_types(folder_path="./gakumasu-diff/orig"):
                 # print(f"\"{file[:-5]}\": [[], []],")
                 # continue
 
-                print("Generating", file_path, f"to json. ({n}/{total})")
+                print("Parsing", file_path, f"to json. ({n}/{total})")
                 try:
                     # Preprocess file: replace tabs with 4 spaces
                     with open(file_path, 'r', encoding='utf-8') as f:

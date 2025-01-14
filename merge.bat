@@ -1,0 +1,1 @@
+python scripts/pretranslate_process.py --merge
