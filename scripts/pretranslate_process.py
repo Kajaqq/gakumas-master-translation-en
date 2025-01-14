@@ -5,12 +5,10 @@ import argparse
 
 import import_db_json
 import export_db_json
+from csv_json_bridge import write_json, write_csv
 
-
-def values_to_keys():
-    root_dir = input("Input export folder(or press enter for default): ") or "exports"
+def values_to_keys(root_dir, output_type='json'):
     output_dir = "./pretranslate_todo/full_out"
-
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -18,7 +16,6 @@ def values_to_keys():
         for name in files:
             if not name.endswith(".json"):
                 continue
-
             data = {}
             with open(os.path.join(root, name), 'r', encoding='utf-8') as f:
                 orig_data = json.load(f)
@@ -26,10 +23,15 @@ def values_to_keys():
             for _, v in orig_data.items():
                 data[v] = ""
 
-            with open(os.path.join(output_dir, name), 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
+            output_dir = os.path.join(output_dir, name)
+            if output_type == 'json':
+                write_json(output_dir, data)
 
-            print("save file", name)
+            elif output_type == 'csv':
+                csv_file = output_dir.replace('.json', '.csv')
+                write_csv(csv_file, data)
+
+            print("saved file", name)
 
 
 def pretranslated_to_kv_files(
@@ -171,6 +173,7 @@ def main():
     parser.add_argument('--gen_todo', action='store_true')
     parser.add_argument('--merge', action='store_true')
     parser.add_argument('--export', action='store_true')
+    parser.add_argument('--export_csv',action='store_true')
     args = parser.parse_args()
 
 
@@ -186,12 +189,16 @@ def main():
     elif args.merge:
         do_idx = "4"
     elif args.export:
-        do_idx ='1'
+        values_to_keys('exports')
+        return
+    elif args.export_csv:
+        values_to_keys('exports',output_type='csv')
+        return
     else:
         raise RuntimeError("Invalid Arguments.")
 
     if do_idx == "1":
-        values_to_keys()
+        values_to_keys(input("Input export folder(or press enter for default): ") or "exports")
 
     elif do_idx == "2":
         gen_todo(input("Input gakumasu_diff_to_json folder(or press enter for default): ") or "gakumasu-diff/json")
