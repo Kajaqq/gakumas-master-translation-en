@@ -173,6 +173,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--gen_todo', action='store_true')
     parser.add_argument('--merge', action='store_true')
+    parser.add_argument('--import_back',action='store_true')
     parser.add_argument('--export', action='store_true')
     parser.add_argument('--export_csv',action='store_true')
     args = parser.parse_args()
@@ -189,6 +190,9 @@ def main():
         return
     elif args.merge:
         do_idx = "4"
+    elif args.import_back:
+        pretranslated_to_kv_files('exports','pretranslate_todo/full_out')
+        return
     elif args.export:
         values_to_keys('exports')
         return

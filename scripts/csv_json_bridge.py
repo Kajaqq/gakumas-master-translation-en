@@ -138,7 +138,7 @@ def mass_csv_to_json(csv_folder, json_folder=None):
 
     with ThreadPoolExecutor() as executor:
         for csv_file in csv_files:
-            json_file = json_folder_path / csv_file.with_suffix(".json").name
+            json_file = json_folder_path / f"{csv_file.stem}_translated.json"
             print(f'Converting {csv_file} to JSON...')
             executor.submit(csv_to_json, str(csv_file), str(json_file))
 

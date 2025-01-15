@@ -6,7 +6,8 @@
 
 # Updating with Scripts
 
-### For Windows use the .bat files instead of make
+### Warning: This process differs significantly from the manual process described below and wont provide the same results
+#### For Windows use the .bat files instead of make
 - Use `make update` to update the MasterDB (`orig` and `json`) file from gakumas-diff
 - Use `make export-db` to export the database files - this should only be run once to generate origin files
 - Use `make gen-todo` to generate files to be translated into the `pretranslate_todo/todo` folder.
@@ -19,18 +20,28 @@
 
 # Manual Execution
 
-## Full Translation Workflow
-
-1. First, run `gakumasu_diff_to_json.py` to convert the YAML files from the `gakumasu-diff` repository into JSON files readable by the plugin. At this stage, the JSON contains the original Japanese text.
+## Manual Translation Workflow
+1. Run `update.bat` to get the newest data and convert the YAML files from the `gakumasu-diff` repository into JSON files readable by the plugin. At this stage, the JSON contains the original Japanese text.
 2. Run `export_db_json.py` to convert the generated JSON into the `key: original Japanese text` format.
-3. Execute `pretranslate_process.py` and select option `1` or add `--export` to convert `key: original Japanese text` into `Japanese: ""` format for pre-translation.
-4. Perform translation manually to obtain a `Japanese: English` file.
-5. Once completed, run `pretranslate_process.py` again and select option `3` to convert the pre-translated `Japanese: English` file into the `key: English` format.
+3. Execute `pretranslate_process.py` and select option `1` or add `--export` to convert `key: original Japanese text` into `Japanese: ""` format for pre-translation.'\
+3a. **The 2 steps above can also be done at once with `export-db.bat`**
+4. Perform translation manually to obtain a `Japanese: English` file, append `_translated` to the end of the file like `Chara_translated.json`
+5. Run `pretranslate_process.py` again and select option `3` or add `--import_back` to convert the translated `Japanese: English` file into the `key: English` format.
 6. Finally, execute `import_db_json.py` to convert the `key: English` file into a JSON file readable by the plugin.
+
+## Translation using Starlit Translator
+1. Run `update.bat` to get the newest data and convert the YAML files from the `gakumasu-diff` repository into JSON files readable by the plugin. At this stage, the JSON contains the original Japanese text.
+2. Run `export_db_json.py` to convert the generated JSON into the `key: original Japanese text` format.
+3. Run `pretranslate_process.py --export_csv` to get `jp:en` csv files, this will generate files in the `pretranslate_todo/full_out` folder'\
+3a. **The 2 steps above can also be done at once with `export-db-csv.bat`**
+4. Perform translation using Starlit Translator, after translating copy the data back to the `pretranslate_todo/full_out`
+5. Run `csv_to_json.bat` or `csv_json_bridge.py --mass_convert` to convert csv files back to json.
+6. Run `pretranslate_process.py` again and select option `3` or add `--import_back` to convert the translated `Japanese: English` file into the `key: English` format.
+7. Finally, execute `import_db_json.py` to convert the files into a JSON file readable by the plugin.
 
 ## Updating Based on Old Files
 
-1. Generate the `todo` files by running `pretranslate_process.py` and selecting option `2` or adding `--gen-todo`. The old translation data is located in the `data` directory, and new files are generated using `gakumasu_diff_to_json`.
+1. Generate the `todo` files by running `pretranslate_process.py` and selecting option `2` or adding `--gen-todo`. The old translation data must be located in the `data` directory, and new files are generated using `gakumasu_diff_to_json`.
 2. After pre-translation is complete, place the new files into `todo/new` and run `pretranslate_process.py`, selecting option `4` or adding `--merge`.
 
 ## Converting json <---> CSV
