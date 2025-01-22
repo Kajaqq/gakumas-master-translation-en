@@ -150,6 +150,18 @@
             "name": ""
         },
         {
+            "id": "highscore-amao-01",
+            "name": "強化月間【金】"
+        },
+        {
+            "id": "highscore-amao-02",
+            "name": "強化月間【銀】"
+        },
+        {
+            "id": "highscore-amao-03",
+            "name": "強化月間【銅】"
+        },
+        {
             "id": "highscore-fktn-01",
             "name": "強化月間【金】"
         },
@@ -195,6 +207,18 @@
         },
         {
             "id": "highscore-hume-03",
+            "name": "強化月間【銅】"
+        },
+        {
+            "id": "highscore-jsna-01",
+            "name": "強化月間【金】"
+        },
+        {
+            "id": "highscore-jsna-02",
+            "name": "強化月間【銀】"
+        },
+        {
+            "id": "highscore-jsna-03",
             "name": "強化月間【銅】"
         },
         {
@@ -304,6 +328,10 @@
         {
             "id": "idolroad-logo-001",
             "name": "名刺パーツ「アイドルへの道」"
+        },
+        {
+            "id": "music-logo-amao-003",
+            "name": ""
         },
         {
             "id": "music-logo-jsna-003",

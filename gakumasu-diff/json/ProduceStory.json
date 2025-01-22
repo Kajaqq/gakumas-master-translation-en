@@ -9495,6 +9495,21 @@
             "produceEventHintProduceConditionDescriptions": []
         },
         {
+            "id": "p_story-i_card-kllj-3-006-01",
+            "title": "Campus mode!! 1話",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-i_card-kllj-3-006-02",
+            "title": "Campus mode!! 2話",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-i_card-kllj-3-006-03",
+            "title": "Campus mode!! 3話",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
             "id": "p_story-i_card-shro-3-000-01",
             "title": "光景 1話",
             "produceEventHintProduceConditionDescriptions": []
@@ -9597,6 +9612,21 @@
         {
             "id": "p_story-i_card-ssmk-3-002-03",
             "title": "カクシタワタシ 3話",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-i_card-ssmk-3-007-01",
+            "title": "Campus mode!! 1話",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-i_card-ssmk-3-007-02",
+            "title": "Campus mode!! 2話",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-i_card-ssmk-3-007-03",
+            "title": "Campus mode!! 3話",
             "produceEventHintProduceConditionDescriptions": []
         },
         {
@@ -10127,6 +10157,36 @@
         {
             "id": "p_story-s_card-2-0037-02",
             "title": "みんなで鍋パ！",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-s_card-2-0038-01",
+            "title": "生徒に優しいトレーナー",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-s_card-2-0038-02",
+            "title": "さっすがトレーナーさん！",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-s_card-2-0039-01",
+            "title": "目指すのは、あくまで",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-s_card-2-0039-02",
+            "title": "ビジュアルレッスンの極意",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-s_card-2-0040-01",
+            "title": "基礎を大事に！",
+            "produceEventHintProduceConditionDescriptions": []
+        },
+        {
+            "id": "p_story-s_card-2-0040-02",
+            "title": "育てがいのある子",
             "produceEventHintProduceConditionDescriptions": []
         },
         {

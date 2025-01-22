@@ -2,10 +2,6 @@
     "rules": {
         "primaryKeys": [
             "id",
-            "descriptions.type",
-            "descriptions.targetId",
-            "descriptions.examEffectType",
-            "descriptions.produceCardCategory",
             "produceDescriptions.produceDescriptionType",
             "produceDescriptions.examDescriptionType",
             "produceDescriptions.examEffectType",
@@ -18,15 +14,6 @@
     "data": [
         {
             "id": "p_card_search-active_skill-deck_all",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_ActiveSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_ActiveSkill",
-                    "text": "アクティブスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCardCategory",
@@ -42,15 +29,6 @@
         },
         {
             "id": "p_card_search-active_skill-first-deck-3",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札の上から3枚のアクティブスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -66,22 +44,6 @@
         },
         {
             "id": "p_card_search-active_skill-hand",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "手札の"
-                },
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_ActiveSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_ActiveSkill",
-                    "text": "アクティブスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -107,22 +69,6 @@
         },
         {
             "id": "p_card_search-active_skill-lost",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "除外にある"
-                },
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_ActiveSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_ActiveSkill",
-                    "text": "アクティブスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -148,15 +94,6 @@
         },
         {
             "id": "p_card_search-active_skill-playing",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_ActiveSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_ActiveSkill",
-                    "text": "アクティブスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCardCategory",
@@ -172,15 +109,6 @@
         },
         {
             "id": "p_card_search-deck",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札にあるスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -196,15 +124,6 @@
         },
         {
             "id": "p_card_search-deck_all",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "スキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -220,22 +139,6 @@
         },
         {
             "id": "p_card_search-deck_all-1-p_card-00-act-0_001",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-00-act-0_001",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "アピールの基本"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "1枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -261,22 +164,6 @@
         },
         {
             "id": "p_card_search-deck_all-1-p_card-00-men-0_003",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-00-men-0_003",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "表現の基本"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "1枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -302,22 +189,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_block-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamBlock",
-                    "examEffectType": "ProduceExamEffectType_ExamBlock",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "元気"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -343,22 +214,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_card_play_aggressive-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamCardPlayAggressive_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamCardPlayAggressive",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "やる気"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -384,22 +239,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_concentration-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamConcentration_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamConcentration",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "強気"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -425,36 +264,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_concentration-000-effect_group-visible-exam_preservation-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamConcentration_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamConcentration",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "強気"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "・"
-                },
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamPreservation_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamPreservation",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "温存"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -500,22 +309,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_full_power-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamFullPower",
-                    "examEffectType": "ProduceExamEffectType_ExamFullPower",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "全力"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -541,36 +334,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_full_power-000-effect_group-visible-exam_preservation-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamFullPower",
-                    "examEffectType": "ProduceExamEffectType_ExamFullPower",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "全力"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "・"
-                },
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamPreservation_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamPreservation",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "温存"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -616,22 +379,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_lesson_buff-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamLessonBuff_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamLessonBuff",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "集中"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -657,22 +404,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_parameter_buff-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamParameterBuff",
-                    "examEffectType": "ProduceExamEffectType_ExamParameterBuff",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "好調"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -698,22 +429,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_preservation-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamPreservation_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamPreservation",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "温存"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -739,22 +454,6 @@
         },
         {
             "id": "p_card_search-deck_all-effect_group-visible-exam_review-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamReview_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamReview",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "好印象"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -780,15 +479,6 @@
         },
         {
             "id": "p_card_search-deck_all-p_card-03-act-1_040",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-03-act-1_040",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "スターライト"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -804,15 +494,6 @@
         },
         {
             "id": "p_card_search-deck_all-p_card-03-ido-3_084",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-03-ido-3_084",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "踏切の先に"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -828,15 +509,6 @@
         },
         {
             "id": "p_card_search-deck_all-starter",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "名前に「基本」を含むスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -852,15 +524,6 @@
         },
         {
             "id": "p_card_search-deck_grave",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札か捨札にあるスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -876,29 +539,6 @@
         },
         {
             "id": "p_card_search-deck_grave-1-p_card-03-act-1_040_upgrade1",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札か捨札にある"
-                },
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-03-act-1_040",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "スターライト+"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "1枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -934,15 +574,6 @@
         },
         {
             "id": "p_card_search-deck_grave-idol-unique-1",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札か捨札にあるアイドル固有スキルカード1枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -958,15 +589,6 @@
         },
         {
             "id": "p_card_search-deck-1",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札のスキルカード1枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -982,15 +604,6 @@
         },
         {
             "id": "p_card_search-first-deck-1",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札の先頭のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1006,15 +619,6 @@
         },
         {
             "id": "p_card_search-first-deck-5",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札の先頭から5枚のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1030,15 +634,6 @@
         },
         {
             "id": "p_card_search-hand",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "手札"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1054,15 +649,6 @@
         },
         {
             "id": "p_card_search-hand-1",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "手札のスキルカード1枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1078,15 +664,6 @@
         },
         {
             "id": "p_card_search-hand-2",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "手札のスキルカード2枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1102,15 +679,6 @@
         },
         {
             "id": "p_card_search-hand-3",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "手札のスキルカード3枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1126,22 +694,6 @@
         },
         {
             "id": "p_card_search-hold",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceDescription",
-                    "targetId": "Label_ProduceCardPositionType_Hold",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "保留"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "にあるスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceDescription",
@@ -1167,15 +719,6 @@
         },
         {
             "id": "p_card_search-lost",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "除外にあるスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1190,16 +733,47 @@
             ]
         },
         {
-            "id": "p_card_search-mental_skill-deck_all",
-            "descriptions": [
+            "id": "p_card_search-lost-idol-unique-1",
+            "produceDescriptions": [
                 {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_MentalSkillCard",
+                    "produceDescriptionType": "ProduceDescriptionType_PlainText",
+                    "examDescriptionType": "ExamDescriptionType_Unknown",
                     "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_MentalSkill",
-                    "text": "メンタルスキルカード"
+                    "produceCardCategory": "ProduceCardCategory_Unknown",
+                    "produceCardMovePositionType": "ProduceCardMovePositionType_Unknown",
+                    "produceStepType": "ProduceStepType_Unknown",
+                    "targetId": "",
+                    "text": "除外にあるアイドル固有スキルカード1枚"
                 }
-            ],
+            ]
+        },
+        {
+            "id": "p_card_search-lost-p_card-02-ido-3_104",
+            "produceDescriptions": [
+                {
+                    "produceDescriptionType": "ProduceDescriptionType_PlainText",
+                    "examDescriptionType": "ExamDescriptionType_Unknown",
+                    "examEffectType": "ProduceExamEffectType_Unknown",
+                    "produceCardCategory": "ProduceCardCategory_Unknown",
+                    "produceCardMovePositionType": "ProduceCardMovePositionType_Unknown",
+                    "produceStepType": "ProduceStepType_Unknown",
+                    "targetId": "",
+                    "text": "除外にある"
+                },
+                {
+                    "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
+                    "examDescriptionType": "ExamDescriptionType_Unknown",
+                    "examEffectType": "ProduceExamEffectType_Unknown",
+                    "produceCardCategory": "ProduceCardCategory_Unknown",
+                    "produceCardMovePositionType": "ProduceCardMovePositionType_Unknown",
+                    "produceStepType": "ProduceStepType_Unknown",
+                    "targetId": "p_card-02-ido-3_104",
+                    "text": "また、飛べる"
+                }
+            ]
+        },
+        {
+            "id": "p_card_search-mental_skill-deck_all",
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCardCategory",
@@ -1215,22 +789,6 @@
         },
         {
             "id": "p_card_search-mental_skill-hand",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "手札の"
-                },
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_MentalSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_MentalSkill",
-                    "text": "メンタルスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1256,15 +814,6 @@
         },
         {
             "id": "p_card_search-mental_skill-playing",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_MentalSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_MentalSkill",
-                    "text": "メンタルスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCardCategory",
@@ -1280,15 +829,6 @@
         },
         {
             "id": "p_card_search-mental_skill-target",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_MentalSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_MentalSkill",
-                    "text": "メンタルスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCardCategory",
@@ -1304,15 +844,6 @@
         },
         {
             "id": "p_card_search-playing",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "スキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1328,15 +859,6 @@
         },
         {
             "id": "p_card_search-playing-1-min_max-6_99",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "消費体力が6以上のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1352,15 +874,6 @@
         },
         {
             "id": "p_card_search-playing-1-p_card-01-act-1_001",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-01-act-1_001",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "ファンサ"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1376,15 +889,6 @@
         },
         {
             "id": "p_card_search-playing-1-p_card-01-act-1_002",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-01-act-1_002",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "軽い足取り"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1399,16 +903,22 @@
             ]
         },
         {
-            "id": "p_card_search-playing-1-p_card-01-act-1_023",
-            "descriptions": [
+            "id": "p_card_search-playing-1-p_card-01-act-1_022",
+            "produceDescriptions": [
                 {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-01-act-1_023",
+                    "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
+                    "examDescriptionType": "ExamDescriptionType_Unknown",
                     "examEffectType": "ProduceExamEffectType_Unknown",
                     "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "勢い任せ"
+                    "produceCardMovePositionType": "ProduceCardMovePositionType_Unknown",
+                    "produceStepType": "ProduceStepType_Unknown",
+                    "targetId": "p_card-01-act-1_022",
+                    "text": "準備運動"
                 }
-            ],
+            ]
+        },
+        {
+            "id": "p_card_search-playing-1-p_card-01-act-1_023",
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1424,15 +934,6 @@
         },
         {
             "id": "p_card_search-playing-1-p_card-01-men-3_006",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-01-men-3_006",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "国民的アイドル"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1447,16 +948,22 @@
             ]
         },
         {
-            "id": "p_card_search-playing-1-p_card-02-men-1_031",
-            "descriptions": [
+            "id": "p_card_search-playing-1-p_card-02-men-1_030",
+            "produceDescriptions": [
                 {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-02-men-1_031",
+                    "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
+                    "examDescriptionType": "ExamDescriptionType_Unknown",
                     "examEffectType": "ProduceExamEffectType_Unknown",
                     "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "えいえいおー"
+                    "produceCardMovePositionType": "ProduceCardMovePositionType_Unknown",
+                    "produceStepType": "ProduceStepType_Unknown",
+                    "targetId": "p_card-02-men-1_030",
+                    "text": "リスタート"
                 }
-            ],
+            ]
+        },
+        {
+            "id": "p_card_search-playing-1-p_card-02-men-1_031",
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1472,15 +979,6 @@
         },
         {
             "id": "p_card_search-playing-1-p_card-02-men-1_032",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-02-men-1_032",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "思い出し笑い"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1496,15 +994,6 @@
         },
         {
             "id": "p_card_search-playing-1-p_card-02-men-3_002",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-02-men-3_002",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "私がスター"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1520,15 +1009,6 @@
         },
         {
             "id": "p_card_search-playing-1-p_card-03-act-1_038",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-03-act-1_038",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "ジャストアピール"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1544,15 +1024,6 @@
         },
         {
             "id": "p_card_search-playing-1-p_card-03-act-1_040",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-03-act-1_040",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "スターライト"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1568,22 +1039,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-exam_block-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamBlock",
-                    "examEffectType": "ProduceExamEffectType_ExamBlock",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "元気"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1609,22 +1064,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-exam_card_play_aggressive-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamCardPlayAggressive_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamCardPlayAggressive",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "やる気"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1650,22 +1089,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-exam_concentration-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamConcentration_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamConcentration",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "強気"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1691,22 +1114,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-exam_parameter_buff_multiple_per_turn-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamParameterBuffMultiplePerTurn",
-                    "examEffectType": "ProduceExamEffectType_ExamParameterBuffMultiplePerTurn",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "絶好調"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1732,22 +1139,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-exam_preservation-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamPreservation_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamPreservation",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "温存"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1773,22 +1164,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-exam_review-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamReview_Produce",
-                    "examEffectType": "ProduceExamEffectType_ExamReview",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "好印象"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1814,22 +1189,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-exam_stamina_consumption_down-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamStaminaConsumptionDown",
-                    "examEffectType": "ProduceExamEffectType_ExamStaminaConsumptionDown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "消費体力減少"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1855,22 +1214,6 @@
         },
         {
             "id": "p_card_search-playing-effect_group-visible-stamina_recover_fix-000",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceExamEffectType",
-                    "targetId": "Label_ExamStaminaRecoverFix",
-                    "examEffectType": "ProduceExamEffectType_ExamStaminaRecoverFix",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "体力回復"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "効果のスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceExamEffectType",
@@ -1896,15 +1239,6 @@
         },
         {
             "id": "p_card_search-playing-is_self",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "自身"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -1920,15 +1254,6 @@
         },
         {
             "id": "p_card_search-playing-p_card-01-ido-1_058",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-01-ido-1_058",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "初めてのご褒美"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1944,15 +1269,6 @@
         },
         {
             "id": "p_card_search-playing-p_card-01-ido-3_066",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-01-ido-3_066",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "アドレナリン全開"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1968,15 +1284,6 @@
         },
         {
             "id": "p_card_search-playing-p_card-02-act-1_028",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-02-act-1_028",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "ゆるふわおしゃべり"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -1992,15 +1299,6 @@
         },
         {
             "id": "p_card_search-playing-p_card-03-men-1_049",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCard",
-                    "targetId": "p_card-03-men-1_049",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "嬉しい誤算"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCard",
@@ -2016,15 +1314,6 @@
         },
         {
             "id": "p_card_search-random-random_pool-p_random_pool-all-upgrade_1-1",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "強化済みスキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -2040,15 +1329,6 @@
         },
         {
             "id": "p_card_search-random-random_pool-p_random_pool-ssr-upgrade_1-1",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "強化済みスキルカード（SSR）"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -2064,15 +1344,6 @@
         },
         {
             "id": "p_card_search-target",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "スキルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -2088,15 +1359,6 @@
         },
         {
             "id": "p_card_search-target_is_self",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "自身"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -2112,15 +1374,6 @@
         },
         {
             "id": "p_card_search-trouble-deck_all",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_TroubleSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Trouble",
-                    "text": "トラブルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_ProduceCardCategory",
@@ -2136,29 +1389,6 @@
         },
         {
             "id": "p_card_search-trouble-deck-2",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "山札の"
-                },
-                {
-                    "type": "ProduceDescriptionType_ProduceCardCategory",
-                    "targetId": "Label_TroubleSkillCard",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Trouble",
-                    "text": "トラブルカード"
-                },
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "2枚"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -2194,15 +1424,6 @@
         },
         {
             "id": "p_card_search-trouble-hand",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "トラブルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",
@@ -2218,15 +1439,6 @@
         },
         {
             "id": "p_card_search-trouble-target",
-            "descriptions": [
-                {
-                    "type": "ProduceDescriptionType_PlainText",
-                    "targetId": "",
-                    "examEffectType": "ProduceExamEffectType_Unknown",
-                    "produceCardCategory": "ProduceCardCategory_Unknown",
-                    "text": "トラブルカード"
-                }
-            ],
             "produceDescriptions": [
                 {
                     "produceDescriptionType": "ProduceDescriptionType_PlainText",

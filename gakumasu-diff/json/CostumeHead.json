@@ -166,6 +166,11 @@
             "description": "プレミアムミッションパス 2024年11月で獲得"
         },
         {
+            "id": "costume_head_fktn-hair-0006",
+            "name": "はつみ☆アクセサリー",
+            "description": "プレミアムミッションパス 2025年2月で獲得"
+        },
+        {
             "id": "costume_head_hmsz-casl-0000",
             "name": "いつもの髪型",
             "description": "最初から所持"
@@ -339,6 +344,11 @@
             "id": "costume_head_hski-hair-0004",
             "name": "ネコミミ",
             "description": "プレミアムミッションパス 2024年11月で獲得"
+        },
+        {
+            "id": "costume_head_hski-hair-0006",
+            "name": "はつみ☆アクセサリー",
+            "description": "プレミアムミッションパス 2025年2月で獲得"
         },
         {
             "id": "costume_head_hski-schl-0000",
@@ -551,6 +561,16 @@
             "description": "【White Night! White Wish!】葛城 リーリヤの才能開花4段階目で入手"
         },
         {
+            "id": "costume_head_kllj-cstm-0053",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】葛城 リーリヤを入手"
+        },
+        {
+            "id": "costume_head_kllj-cstm-0054",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】葛城 リーリヤの才能開花4段階目で入手"
+        },
+        {
             "id": "costume_head_kllj-cstm-0065",
             "name": "仮装狂騒曲",
             "description": "【白線】'24ハロウィン 葛城 リーリヤを入手"
@@ -661,6 +681,16 @@
             "description": "【キミとセミブルー】紫雲 清夏の才能開花4段階目で入手"
         },
         {
+            "id": "costume_head_ssmk-cstm-0053",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】紫雲 清夏を入手"
+        },
+        {
+            "id": "costume_head_ssmk-cstm-0054",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】紫雲 清夏の才能開花4段階目で入手"
+        },
+        {
             "id": "costume_head_ssmk-cstm-0063",
             "name": "冠菊",
             "description": "【Tame-Lie-One-Step】'24祭 紫雲 清夏を入手"
@@ -764,6 +794,11 @@
             "id": "costume_head_ttmr-hair-0004",
             "name": "ネコミミ",
             "description": "プレミアムミッションパス 2024年11月で獲得"
+        },
+        {
+            "id": "costume_head_ttmr-hair-0006",
+            "name": "はつみ☆アクセサリー",
+            "description": "プレミアムミッションパス 2025年2月で獲得"
         }
     ]
 }

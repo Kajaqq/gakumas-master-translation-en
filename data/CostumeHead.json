@@ -166,6 +166,11 @@
       "description": "2024年11月的高级任务通行证获得"
     },
     {
+      "id": "costume_head_fktn-hair-0006",
+      "name": "初见☆饰品",
+      "description": "高级任务通行证 2025年2月获取"
+    },
+    {
       "id": "costume_head_hmsz-casl-0000",
       "name": "平时的发型",
       "description": "一开始就拥有"
@@ -339,6 +344,11 @@
       "id": "costume_head_hski-hair-0004",
       "name": "猫耳",
       "description": "2024年11月的高级任务通行证获得"
+    },
+    {
+      "id": "costume_head_hski-hair-0006",
+      "name": "初见☆饰品",
+      "description": "高级任务通行证 2025年2月获取"
     },
     {
       "id": "costume_head_hski-schl-0000",
@@ -551,6 +561,16 @@
       "description": "【White Night! White Wish!】葛城 リーリヤ的才华开花第4阶段取得"
     },
     {
+      "id": "costume_head_kllj-cstm-0053",
+      "name": "Campus mode!!",
+      "description": "【Campus mode!!】入手葛城莉莉娅"
+    },
+    {
+      "id": "costume_head_kllj-cstm-0054",
+      "name": "Campus mode!!",
+      "description": "【Campus mode!!】在葛城莉莉娅的才能开花第4阶段入手"
+    },
+    {
       "id": "costume_head_kllj-cstm-0065",
       "name": "假装狂躁曲",
       "description": "【白线】'24万圣节 葛城 リーリヤ获得"
@@ -661,6 +681,16 @@
       "description": "【你与半蓝】获得紫云清夏的才能绽放4阶段"
     },
     {
+      "id": "costume_head_ssmk-cstm-0053",
+      "name": "Campus mode!!",
+      "description": "【Campus mode!!】入手紫云清夏"
+    },
+    {
+      "id": "costume_head_ssmk-cstm-0054",
+      "name": "Campus mode!!",
+      "description": "【Campus mode!!】在紫云清夏的才能开花第4阶段入手"
+    },
+    {
       "id": "costume_head_ssmk-cstm-0063",
       "name": "冠菊",
       "description": "【Tame-Lie-One-Step】'24祭 获得紫云 清夏"
@@ -764,6 +794,11 @@
       "id": "costume_head_ttmr-hair-0004",
       "name": "猫耳",
       "description": "2024年11月的高级任务通行证获得"
+    },
+    {
+      "id": "costume_head_ttmr-hair-0006",
+      "name": "初见☆饰品",
+      "description": "高级任务通行证 2025年2月获取"
     }
   ]
 }

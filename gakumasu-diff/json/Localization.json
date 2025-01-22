@@ -82,6 +82,10 @@
             "description": "MIDステージ適正"
         },
         {
+            "id": "common.network.error.purchase_limit.description",
+            "description": "購入上限に達しているため購入が完了できませんでした。以下よりお問い合わせください。"
+        },
+        {
             "id": "common.user_exp.description",
             "description": "プロデューサーLvの上昇に必要な経験値"
         },
@@ -92,26 +96,6 @@
         {
             "id": "faq_confirm_sheet.description",
             "description": "FAQページを開きますか？\\n※Webブラウザが立ち上がります"
-        },
-        {
-            "id": "home.gasha.detail.idol.extra_text.costume_body",
-            "description": "衣装・"
-        },
-        {
-            "id": "home.gasha.detail.idol.extra_text.costume_head",
-            "description": "髪型・"
-        },
-        {
-            "id": "home.gasha.detail.idol.extra_text.music",
-            "description": ""
-        },
-        {
-            "id": "home.gasha.detail.idol.extra_text.separator",
-            "description": ""
-        },
-        {
-            "id": "home.gasha.detail.idol.extra_text.suffix",
-            "description": "楽曲付き!"
         },
         {
             "id": "home.gasha.draw_jewel_confirm_sheet.description.multiple_button",

@@ -423,7 +423,22 @@
         {
             "id": "achieve-i_card-kllj-3-005-03",
             "name": "センパイへ",
-            "description": "【White Night! White Wish!】葛城リーリヤのプロデュースで評価A+以上を{threshold}回獲得"
+            "description": "【White Night! White Wish!】葛城 リーリヤのプロデュースで評価A+以上を{threshold}回獲得"
+        },
+        {
+            "id": "achieve-i_card-kllj-3-006-01",
+            "name": "いつか見た景色",
+            "description": "【Campus mode!!】葛城 リーリヤのプロデュースで最終試験に合格"
+        },
+        {
+            "id": "achieve-i_card-kllj-3-006-02",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】葛城 リーリヤの特訓段階を{threshold}にする"
+        },
+        {
+            "id": "achieve-i_card-kllj-3-006-03",
+            "name": "みんなが見ている景色",
+            "description": "【Campus mode!!】葛城 リーリヤのプロデュースで評価A+以上を{threshold}回獲得"
         },
         {
             "id": "achieve-i_card-shro-3-001-01",
@@ -499,6 +514,21 @@
             "id": "achieve-i_card-ssmk-3-002-03",
             "name": "精一杯の強がり",
             "description": "【カクシタワタシ】紫雲 清夏のプロデュースで評価A+以上を{threshold}回獲得"
+        },
+        {
+            "id": "achieve-i_card-ssmk-3-007-01",
+            "name": "また、飛べる",
+            "description": "【Campus mode!!】紫雲 清夏のプロデュースで最終試験に合格"
+        },
+        {
+            "id": "achieve-i_card-ssmk-3-007-02",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】紫雲 清夏の特訓段階を{threshold}にする"
+        },
+        {
+            "id": "achieve-i_card-ssmk-3-007-03",
+            "name": "ここまで来て",
+            "description": "【Campus mode!!】紫雲 清夏のプロデュースで評価A+以上を{threshold}回獲得"
         },
         {
             "id": "achieve-i_card-ttmr-3-001-01",
@@ -1262,7 +1292,7 @@
         },
         {
             "id": "achieve-p_idol-fktn-005",
-            "name": "つまづいてなんていられない",
+            "name": "つまずいてなんていられない",
             "description": "藤田 ことねで最終試験に合格して評価A以上を{threshold}回獲得"
         },
         {
@@ -1297,7 +1327,7 @@
         },
         {
             "id": "achieve-p_idol-fktn-012",
-            "name": "アイドル適正S",
+            "name": "アイドル適性S",
             "description": "藤田 ことねでプロデュース評価を合計{threshold}獲得"
         },
         {

@@ -22,6 +22,10 @@
             "name": "ハイスコアイベントポイント"
         },
         {
+            "id": "highscore-event-004_point",
+            "name": "ハイスコアイベントポイント"
+        },
+        {
             "id": "main-story-event-001_point",
             "name": "初星コミュイベントミッションPt"
         },

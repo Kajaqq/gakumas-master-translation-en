@@ -51,6 +51,13 @@
         },
         {
             "characterId": "amao",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "有村 麻央",
+            "message": "まだコンテストに挑戦できますね。\nいろんなボクの姿を、\nファンのみんなに見てもらいたいです"
+        },
+        {
+            "characterId": "amao",
             "type": "PushType_WorkMiniLiveFinish",
             "number": 1,
             "title": "有村 麻央",
@@ -132,6 +139,13 @@
             "number": 1,
             "title": "藤田 ことね",
             "message": "あたし、プロデューサーとなら夢を\n叶えられるって思ってます！\nだから、戻ってきてください……！"
+        },
+        {
+            "characterId": "fktn",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "藤田 ことね",
+            "message": "コンテスト、まだまだ挑戦\nできますよ～？　超可愛いあたしを、\n見せちゃいまぁすッ♡"
         },
         {
             "characterId": "fktn",
@@ -219,6 +233,13 @@
         },
         {
             "characterId": "hrnm",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "姫崎 莉波",
+            "message": "コンテスト、挑戦できるみたい。\n頑張る私の姿、きみにも見て欲しいな"
+        },
+        {
+            "characterId": "hrnm",
             "type": "PushType_WorkMiniLiveFinish",
             "number": 1,
             "title": "姫崎 莉波",
@@ -300,6 +321,13 @@
             "number": 1,
             "title": "花海 咲季",
             "message": "プロデューサー、わたしはあなたと\nトップアイドルを目指したいの。\n早く戻ってきなさい"
+        },
+        {
+            "characterId": "hski",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "花海 咲季",
+            "message": "まだ、コンテストに挑戦できるわ。\nプロデューサー！\n一緒に勝ちにいきましょ！"
         },
         {
             "characterId": "hski",
@@ -387,6 +415,13 @@
         },
         {
             "characterId": "hume",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "花海 佑芽",
+            "message": "あたし、コンテストに挑戦できます！\nどーんとやっちゃいましょう、\nプロデューサーさんっ！"
+        },
+        {
+            "characterId": "hume",
             "type": "PushType_WorkMiniLiveFinish",
             "number": 1,
             "title": "花海 佑芽",
@@ -468,6 +503,13 @@
             "number": 1,
             "title": "十王 星南",
             "message": "あなたから学びたいことがまだまだ\nたくさんあるの。\n戻ってきて頂戴、先輩"
+        },
+        {
+            "characterId": "jsna",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "十王 星南",
+            "message": "まだコンテストに挑戦できるわね。\n調整は完璧。十王星南の新たな\n可能性、見せつけにいきましょう！"
         },
         {
             "characterId": "jsna",
@@ -555,6 +597,13 @@
         },
         {
             "characterId": "kcna",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "倉本 千奈",
+            "message": "まだコンテストに\n挑戦できるそうです。先生！\n一緒にまいりましょう！"
+        },
+        {
+            "characterId": "kcna",
             "type": "PushType_WorkMiniLiveFinish",
             "number": 1,
             "title": "倉本 千奈",
@@ -636,6 +685,13 @@
             "number": 1,
             "title": "葛城 リーリヤ",
             "message": "……センパイ。わたし、頑張ります。\nだから、戻ってきてください。"
+        },
+        {
+            "characterId": "kllj",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "葛城 リーリヤ",
+            "message": "まだコンテストに挑戦できる、\nみたいです。わたし……\nセンパイと一緒に、勝ちたいです……！"
         },
         {
             "characterId": "kllj",
@@ -723,6 +779,13 @@
         },
         {
             "characterId": "shro",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "篠澤 広",
+            "message": "コンテスト、まだ挑戦できる、よ。\n当たって、こなごなに砕けにいこう"
+        },
+        {
+            "characterId": "shro",
             "type": "PushType_WorkMiniLiveFinish",
             "number": 1,
             "title": "篠澤 広",
@@ -807,6 +870,13 @@
         },
         {
             "characterId": "ssmk",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "紫雲 清夏",
+            "message": "まだコンテストに挑戦できるよ？\nこれはもう、やるしかないよねっ♪"
+        },
+        {
+            "characterId": "ssmk",
             "type": "PushType_WorkMiniLiveFinish",
             "number": 1,
             "title": "紫雲 清夏",
@@ -888,6 +958,13 @@
             "number": 1,
             "title": "月村 手毬",
             "message": "こんな私でもプロデュースしてくれる\nって言ってくれたのに……\nプロデューサー、戻ってきてよ"
+        },
+        {
+            "characterId": "ttmr",
+            "type": "PushType_PvpRateRemainingPlayCount",
+            "number": 1,
+            "title": "月村 手毬",
+            "message": "まだコンテストに挑戦できます。\nほら、プロデューサー。\n一緒にいきますよ"
         },
         {
             "characterId": "ttmr",

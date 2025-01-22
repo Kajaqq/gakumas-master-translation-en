@@ -731,6 +731,16 @@
             "description": "【白線】'24夏 葛城 リーリヤを入手"
         },
         {
+            "id": "kllj-cstm-0053",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】葛城 リーリヤを入手"
+        },
+        {
+            "id": "kllj-cstm-0054",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】葛城 リーリヤの才能開花4段階目で入手"
+        },
+        {
             "id": "kllj-cstm-0065",
             "name": "仮装狂騒曲",
             "description": "【白線】'24ハロウィン 葛城 リーリヤを入手"
@@ -909,6 +919,16 @@
             "id": "ssmk-cstm-0044",
             "name": "キミとセミブルー",
             "description": "【キミとセミブルー】紫雲 清夏の才能開花4段階目で入手"
+        },
+        {
+            "id": "ssmk-cstm-0053",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】紫雲 清夏を入手"
+        },
+        {
+            "id": "ssmk-cstm-0054",
+            "name": "Campus mode!!",
+            "description": "【Campus mode!!】紫雲 清夏の才能開花4段階目で入手"
         },
         {
             "id": "ssmk-cstm-0063",

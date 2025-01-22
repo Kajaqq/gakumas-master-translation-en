@@ -82,6 +82,10 @@
       "description": "MID舞台适性"
     },
     {
+      "id": "common.network.error.purchase_limit.description",
+      "description": "由于达到购买上限，无法完成购买。请通过以下方式联系我们。"
+    },
+    {
       "id": "common.user_exp.description",
       "description": "制作人Lv上升所需的经验值"
     },
@@ -92,26 +96,6 @@
     {
       "id": "faq_confirm_sheet.description",
       "description": "要打开FAQ页面吗？\\n※将打开网页浏览器"
-    },
-    {
-      "id": "home.gasha.detail.idol.extra_text.costume_body",
-      "description": "服装・"
-    },
-    {
-      "id": "home.gasha.detail.idol.extra_text.costume_head",
-      "description": "发型・"
-    },
-    {
-      "id": "home.gasha.detail.idol.extra_text.music",
-      "description": ""
-    },
-    {
-      "id": "home.gasha.detail.idol.extra_text.separator",
-      "description": ""
-    },
-    {
-      "id": "home.gasha.detail.idol.extra_text.suffix",
-      "description": "附加曲目!"
     },
     {
       "id": "home.gasha.draw_jewel_confirm_sheet.description.multiple_button",

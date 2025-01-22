@@ -1,6 +1,7 @@
 import os
 import yaml
 import json
+from typing import List
 from yaml.reader import Reader
 
 
@@ -11,7 +12,7 @@ primary_key_rules = {
     # "AssetDownload": [[], []],
     # "Bgm": [[], []],
     "Character": [["id"], ["lastName", "firstName"]],
-    # "CharacterAdv": [[], []],
+    "CharacterAdv": [["characterId"], ["name", "regexp"]],
     # "CharacterColor": [[], []],
     "CharacterDearnessLevel": [["characterId", "dearnessLevel"], ["produceConditionDescription"]],
     # "CharacterDearnessStoryGashaCampaign": [[], []],
@@ -116,16 +117,16 @@ primary_key_rules = {
     "ProduceAdv": [["produceType", "type"], ["title"]],
     "ProduceCard": [["id", "upgradeCount", "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType", "produceDescriptions.examEffectType",
                      "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId",
-                     "descriptions.type", "descriptions.targetId", "descriptions.examEffectType", "descriptions.produceCardCategory"],
-                    ["name", "produceDescriptions.text", "descriptions.text"]],  # 嵌套
+                     ],
+                    ["name", "produceDescriptions.text"]],  # 嵌套
     "ProduceCardCustomize": [["id", "customizeCount"], ["description"]],
     # "ProduceCardCustomizeRarityEvaluation": [[], []],
     # "ProduceCardGrowEffect": [[], []],
     # "ProduceCardRandomPool": [[], []],
-    "ProduceCardSearch": [["id", "descriptions.type", "descriptions.targetId", "descriptions.examEffectType", "descriptions.produceCardCategory",
+    "ProduceCardSearch": [["id", 
                            "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType", "produceDescriptions.examEffectType",
                            "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId"],
-                          ["descriptions.text", "produceDescriptions.text"]],  # 嵌套
+                          ["produceDescriptions.text"]],  # 嵌套
     # "ProduceCardSimulation": [[], []],
     # "ProduceCardSimulationGroup": [[], []],
     # "ProduceCardStatusEffect": [[], []],
@@ -139,7 +140,10 @@ primary_key_rules = {
     "ProduceCharacterAdv": [["assetId"], ["title"]],
     "ProduceDescription": [["id"], ["name", "swapName"]],
     "ProduceDescriptionExamEffect": [["type"], ["name"]],
-    "ProduceDescriptionLabel": [["id"], ["name"]],
+    "ProduceDescriptionLabel": [["id", 
+                                 "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType", "produceDescriptions.examEffectType",
+                                 "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId"], 
+                                ["name", "produceDescriptions.text"]],
     "ProduceDescriptionProduceCardGrowEffect": [["type"], ["name"]],
     "ProduceDescriptionProduceCardGrowEffectType": [["type"], ["name", "produceCardCustomizeTemplate"]],
     # "ProduceDescriptionProduceCardMovePosition": [[], []],
@@ -172,17 +176,15 @@ primary_key_rules = {
                           "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId"],
                           ["produceDescriptions.text"]],  # 嵌套List Obj
     "ProduceExamGimmickEffectGroup": [["id", "priority", "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType", "produceDescriptions.examEffectType",
-                                      "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId",
-                                       "effectDescriptions.type", "effectDescriptions.examEffectType", "effectDescriptions.produceCardCategory",
-                                       "descriptions.type", "descriptions.targetId", "descriptions.examEffectType", "descriptions.produceCardCategory"],
-                                      ["descriptions.text", "effectDescriptions.text", "produceDescriptions.text"]],  # 嵌套List Obj
+                                      "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId"],
+                                      ["produceDescriptions.text"]],  # 嵌套List Obj
     "ProduceExamStatusEnchant": [["id", "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType", "produceDescriptions.examEffectType",
                                   "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId"],
                                  ["produceDescriptions.text"]],  # 嵌套List Obj
     "ProduceExamTrigger": [["id", "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType", "produceDescriptions.examEffectType",
                             "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId",
-                            "descriptions.type", "descriptions.targetId", "descriptions.examEffectType", "descriptions.produceCardCategory"],
-                           ["descriptions.text", "produceDescriptions.text"]],  # 嵌套List Obj
+                            ],
+                           ["produceDescriptions.text"]],  # 嵌套List Obj
     "ProduceGroup": [["id"], ["name", "description"]],
     # "ProduceGroupLiveCommon": [[], []],
     "ProduceHighScore": [["id"], ["name"]],
@@ -208,18 +210,18 @@ primary_key_rules = {
     # "ProduceStepAuditionCharacter": [[], []],
     # "ProduceStepAuditionDifficulty": [[], []],
     # "ProduceStepAuditionMotion": [[], []],
-    "ProduceStepEventDetail": [["id", "descriptions.type", "descriptions.targetId", "descriptions.examEffectType", "descriptions.produceCardCategory",
+    "ProduceStepEventDetail": [["id", 
                                 "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType",
                                 "produceDescriptions.examEffectType",
                                 "produceDescriptions.produceCardCategory",
                                 "produceDescriptions.produceCardMovePositionType",
                                 "produceDescriptions.produceStepType", "produceDescriptions.targetId"
                                 ],
-                               ["descriptions.text", "produceDescriptions.text"]],  # 嵌套List Obj
+                               ["produceDescriptions.text"]],  # 嵌套List Obj
     "ProduceStepEventSuggestion": [["id", "produceDescriptions.produceDescriptionType", "produceDescriptions.examDescriptionType", "produceDescriptions.examEffectType",
                                     "produceDescriptions.produceCardCategory", "produceDescriptions.produceCardMovePositionType", "produceDescriptions.produceStepType", "produceDescriptions.targetId",
-                                    "descriptions.type", "descriptions.targetId", "descriptions.examEffectType", "descriptions.produceCardCategory"],
-                                   ["descriptions.text", "produceDescriptions.text"]],  # 嵌套List Obj
+                                    ],
+                                   ["produceDescriptions.text"]],  # 嵌套List Obj
     # "ProduceStepFanPresentMotion": [[], []],
     "ProduceStepLesson": [["id"], ["name"]],
     # "ProduceStepLessonLevel": [[], []],
@@ -244,9 +246,9 @@ primary_key_rules = {
     "Story": [["id"], ["title"]],
     "StoryEvent": [["id"], ["title"]],
     "StoryGroup": [["id"], ["title"]],
-    "SupportCard": [["id", "upgradeProduceCardDescriptions.type", "upgradeProduceCardDescriptions.examEffectType", "upgradeProduceCardDescriptions.produceCardCategory",
-                     "upgradeProduceCardProduceDescriptions.produceDescriptionType", "upgradeProduceCardProduceDescriptions.examDescriptionType", "upgradeProduceCardProduceDescriptions.examEffectType", "upgradeProduceCardProduceDescriptions.produceCardGrowEffectType", "upgradeProduceCardProduceDescriptions.produceCardCategory", "upgradeProduceCardProduceDescriptions.produceCardMovePositionType", "upgradeProduceCardProduceDescriptions.produceStepType"],
-                    ["name", "upgradeProduceCardDescriptions.text", "upgradeProduceCardProduceDescriptions.text"]],  # 嵌套List Obj
+    "SupportCard": [["id", "upgradeProduceCardProduceDescriptions.produceDescriptionType", "upgradeProduceCardProduceDescriptions.examDescriptionType", "upgradeProduceCardProduceDescriptions.examEffectType", 
+                     "upgradeProduceCardProduceDescriptions.produceCardGrowEffectType", "upgradeProduceCardProduceDescriptions.produceCardCategory", "upgradeProduceCardProduceDescriptions.produceCardMovePositionType", "upgradeProduceCardProduceDescriptions.produceStepType"],
+                    ["name", "upgradeProduceCardProduceDescriptions.text"]],  # 嵌套List Obj
     # "SupportCardBonus": [[], []],
     "SupportCardFlavor": [["supportCardId", "number"], ["text"]],
     # "SupportCardLevel": [[], []],
@@ -332,7 +334,15 @@ def save_json(data: list, name: str):
         )
         processed_data.append(filtered_record)
 
+    # Make first data has all key
+    # This can be removed when app can parse all key(also key type) properly.
+    # Currently there is a bug on finding type and find local key from data
+    # We must make sure first data has all key
+    if not sort_records_fields(processed_data, all_keys):
+        print(f"Failed to find super key object from {name}")
+        
     # Generate the final JSON structure
+    
     result = {
         "rules": {
             "primaryKeys": primary_keys
@@ -346,6 +356,42 @@ def save_json(data: list, name: str):
         json.dump(result, f, ensure_ascii=False, indent=4)
     return f'gakumasu-diff/json/{name}.json'
 
+def sort_records_fields(records: List[dict], field_paths: list):
+    def hasPaths(record:dict, path:list):
+        if not path:
+            return False
+        key = path[0]
+        if not isinstance(record, dict) or key not in record:
+            return False
+        record_value = record[key]
+        # No more sub object, we find all object from record by path 
+        if len(path) == 1:
+            return True
+        
+        # If there is obj use treversal to find value 
+        if isinstance(record_value, dict):
+            return hasPaths(record_value, path[1:])
+
+        # When obj is list, check all element 
+        if isinstance(record_value, list):
+            for item in record_value:
+                if isinstance(item, dict):
+                    if hasPaths(item, path[1:]):
+                        # it has all subkey
+                        return True
+        # Failed to find value by key
+        return False
+    for idx in range(len(records)):
+        hasAllField = True
+        for paths in field_paths:
+            path = paths.split(".") 
+            if not hasPaths(records[idx], path):
+                hasAllField = False
+                break
+        if hasAllField:
+            records.insert(0, records.pop(idx))
+            return True
+    return False
 
 def filter_record_fields(record: dict, field_paths: list,
                          primary_keys: list, other_keys: list) -> dict:
