@@ -1,0 +1,1 @@
+python scripts/csv_json_bridge.py --mass_convert
