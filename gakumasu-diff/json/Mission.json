@@ -494,6 +494,26 @@
             "name": "SPレッスンを{threshold}回クリアしよう"
         },
         {
+            "id": "mission-box-gasha-event-005-mission_1",
+            "name": "{threshold}日ログインしよう"
+        },
+        {
+            "id": "mission-box-gasha-event-005-mission_2",
+            "name": "最終試験に{threshold}回合格しよう"
+        },
+        {
+            "id": "mission-box-gasha-event-005-mission_3",
+            "name": "イベントボックスガシャを{threshold}回引こう"
+        },
+        {
+            "id": "mission-box-gasha-event-005-mission_4",
+            "name": "プロデュース評価を合計{threshold}獲得しよう"
+        },
+        {
+            "id": "mission-box-gasha-event-005-mission_5",
+            "name": "SPレッスンを{threshold}回クリアしよう"
+        },
+        {
             "id": "mission-circle-battle-event-001-mission_1",
             "name": "{threshold}日ログインしよう"
         },
@@ -2898,6 +2918,18 @@
             "name": "【Campus mode!!】姫崎 莉波のプロデュースで評価A+以上を{threshold}回獲得"
         },
         {
+            "id": "achieve-i_card-hrnm-3-008-01",
+            "name": "【ハッピーミルフィーユ】姫崎 莉波のプロデュースで最終試験に合格"
+        },
+        {
+            "id": "achieve-i_card-hrnm-3-008-02",
+            "name": "【ハッピーミルフィーユ】姫崎 莉波の特訓段階を{threshold}にする"
+        },
+        {
+            "id": "achieve-i_card-hrnm-3-008-03",
+            "name": "【ハッピーミルフィーユ】姫崎 莉波のプロデュースで評価A+以上を{threshold}回獲得"
+        },
+        {
             "id": "achieve-i_card-hski-3-001-01",
             "name": "【Boom Boom Pow】花海 咲季のプロデュースで最終試験に合格"
         },
@@ -3148,6 +3180,18 @@
         {
             "id": "achieve-i_card-shro-3-007-03",
             "name": "【Campus mode!!】篠澤 広のプロデュースで評価A+以上を{threshold}回獲得"
+        },
+        {
+            "id": "achieve-i_card-shro-3-008-01",
+            "name": "【ハッピーミルフィーユ】篠澤 広のプロデュースで最終試験に合格"
+        },
+        {
+            "id": "achieve-i_card-shro-3-008-02",
+            "name": "【ハッピーミルフィーユ】篠澤 広の特訓段階を{threshold}にする"
+        },
+        {
+            "id": "achieve-i_card-shro-3-008-03",
+            "name": "【ハッピーミルフィーユ】篠澤 広のプロデュースで評価A+以上を{threshold}回獲得"
         },
         {
             "id": "achieve-i_card-ssmk-3-001-01",

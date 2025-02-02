@@ -30,6 +30,12 @@
             "acquisitionRouteDescription": "プロデュースなど"
         },
         {
+            "id": "item-coin-box-gasha-event-005",
+            "name": "はちゃめちゃチョコ",
+            "description": "イベントガシャで使用するアイテム",
+            "acquisitionRouteDescription": "プロデュースなど"
+        },
+        {
             "id": "item-common-idol_card-piece-r",
             "name": "Rアイドルのピース",
             "description": "Rプロデュースアイドルの才能開花に使用できるアイテム",
@@ -444,6 +450,12 @@
             "acquisitionRouteDescription": "ガシャなど"
         },
         {
+            "id": "item-piece-idol_hrnm-3-008",
+            "name": "[ハッピーミルフィーユ]姫崎莉波のピース",
+            "description": "プロデュースアイドルの才能開花や解放に使用するアイテム",
+            "acquisitionRouteDescription": "ガシャなど"
+        },
+        {
             "id": "item-piece-idol_hski-1-000",
             "name": "[学園生活]花海咲季のピース",
             "description": "プロデュースアイドルの才能開花や解放に使用するアイテム",
@@ -676,6 +688,12 @@
             "name": "[Campus mode!!]篠澤広のピース",
             "description": "プロデュースアイドルの才能開花や解放に使用するアイテム",
             "acquisitionRouteDescription": "ガシャなど"
+        },
+        {
+            "id": "item-piece-idol_shro-3-008",
+            "name": "[ハッピーミルフィーユ]篠澤広のピース",
+            "description": "プロデュースアイドルの才能開花や解放に使用するアイテム",
+            "acquisitionRouteDescription": "イベントガシャなど"
         },
         {
             "id": "item-piece-idol_ssmk-1-000",

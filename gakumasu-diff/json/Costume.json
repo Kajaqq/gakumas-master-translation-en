@@ -86,6 +86,11 @@
             "description": "有村麻央のアイドルへの道 ステージ15をクリア"
         },
         {
+            "id": "amao-cstm-0075",
+            "name": "ハッピーミルフィーユ",
+            "description": "【Fluorite】'25バレンタイン 有村 麻央を入手"
+        },
+        {
             "id": "amao-othr-0002",
             "name": "温泉用水着",
             "description": "温泉用水着（有村麻央）を購入"
@@ -191,6 +196,11 @@
             "description": "藤田ことねのアイドルへの道 ステージ15をクリア"
         },
         {
+            "id": "fktn-cstm-0075",
+            "name": "ハッピーミルフィーユ",
+            "description": "【世界一可愛い私】'25バレンタイン 藤田 ことねを入手"
+        },
+        {
             "id": "fktn-othr-0002",
             "name": "温泉用水着",
             "description": "温泉用水着（藤田ことね）を購入"
@@ -259,6 +269,16 @@
             "id": "hrnm-cstm-0054",
             "name": "Campus mode!!",
             "description": "【Campus mode!!】姫崎 莉波の才能開花4段階目で入手"
+        },
+        {
+            "id": "hrnm-cstm-0055",
+            "name": "ハッピーミルフィーユ",
+            "description": "【ハッピーミルフィーユ】姫崎 莉波を入手"
+        },
+        {
+            "id": "hrnm-cstm-0056",
+            "name": "ハッピーミルフィーユ",
+            "description": "【ハッピーミルフィーユ】姫崎 莉波の才能開花4段階目で入手"
         },
         {
             "id": "hrnm-cstm-0063",
@@ -404,6 +424,11 @@
             "id": "hski-cstm-0074",
             "name": "古今東西ちょちょいのちょい",
             "description": "【古今東西ちょちょいのちょい】花海 咲季の才能開花4段階目で入手"
+        },
+        {
+            "id": "hski-cstm-0075",
+            "name": "ハッピーミルフィーユ",
+            "description": "【Fighting my way】'25バレンタイン 花海 咲季を入手"
         },
         {
             "id": "hski-othr-0002",
@@ -761,6 +786,11 @@
             "description": "葛城リーリヤのアイドルへの道 ステージ15をクリア"
         },
         {
+            "id": "kllj-cstm-0075",
+            "name": "ハッピーミルフィーユ",
+            "description": "【白線】'25バレンタイン 葛城 リーリヤを入手"
+        },
+        {
             "id": "kllj-othr-0002",
             "name": "温泉用水着",
             "description": "温泉用水着（葛城リーリヤ）を購入"
@@ -864,6 +894,11 @@
             "id": "shro-cstm-0073",
             "name": "プラチナの輝き",
             "description": "篠澤広のアイドルへの道 ステージ15をクリア"
+        },
+        {
+            "id": "shro-cstm-0075",
+            "name": "ハッピーミルフィーユ",
+            "description": "【ハッピーミルフィーユ】篠澤 広を入手"
         },
         {
             "id": "shro-othr-0002",
