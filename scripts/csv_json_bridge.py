@@ -109,12 +109,16 @@ def csv_to_json(csv_filepath, json_filepath):
     """
     data = read_csv(csv_filepath)
     json_data = {}
+    header = list(data[0].keys()) # Get the header keys
+    source_key = header[0] # 'source' key
+    translated_key = header[1] # 'translatedstr' key
     for row in data:
-        source_row = row['source']
-        if 'translatedstr' in row:
-            json_data[source_row] = row['translatedstr']
+        source_text = row[source_key]
+        if translated_key in row:
+            json_data[source_text] = row[translated_key]
         else:
-            json_data[source_row] = ''  # Handle missing 'translatedstr' as empty string
+            print(f'ERROR: File {csv_filepath} - Could not find {translated_key} in row:', row)
+            json_data[source_text] = ''  # Handle missing 'translatedstr' as empty string
     write_json(json_filepath, json_data)
 
 def mass_csv_to_json(csv_folder, json_folder=None):
