@@ -29,7 +29,7 @@ primary_key_rules = {
     # "CostumeGroup": [[], []],
     "CostumeHead": [["id"], ["name", "description"]],
     # "CostumeMotion": [[], []],
-    # "CostumePhotoGroup": [[], []],
+    # "CostumePhotoGroup": [["id", "characterId", "number"], ["costumeIds"]],
     # "DearnessStoryCampaign": [[], []],
     # "DeepLinkTransition": [[], []],
     "EffectGroup": [["id"], ["name"]],
@@ -49,9 +49,9 @@ primary_key_rules = {
     # "GuildReaction": [[], []],
     "GvgRaid": [["id", "order"], ["name"]],
     # "GvgRaidStageLoop": [[], []],
-    "HelpCategory": [["id", "order"], ["name", "texts"]],
-    "HelpContent": [["helpCategoryId", "id", "order"], ["name"]],
-    # "HelpInfo": [[], []],
+    "HelpCategory": [["id", "order"], ["name", "texts", "hiddenHelpList"]],
+    "HelpContent": [["helpCategoryId", "id", "order"], ["name", "detailUrl"]],
+    # "HelpInfo": [["type", "openHelpCategoryId", "openHelpContentId"], ["helpCategoryIds"]],
     # "HomeBoard": [[], []],
     # "HomeMonitor": [[], []],
     # "HomeMotion": [[], []],
@@ -79,7 +79,7 @@ primary_key_rules = {
     "MainTask": [["mainTaskGroupId", "number"], ["title", "description", "homeDescription"]],
     "MainTaskGroup": [["id"], ["title"]],
     # "MainTaskIcon": [[], []],
-    "Media": [["id"], ["name"]],
+    "Media": [["id"], ["name"]], # , "mediaType", "assetId", "thumbnailAssetId", "viewConditionSetId", "characterIds", "externalUrl", "fourPanelComicEpisode", "startTime", "endTime", "order"
     "MeishiBaseAsset": [["id"], ["name"]],
     # "MeishiBaseColor": [[], []],
     "MeishiIllustrationAsset": [["id"], ["name"]],
@@ -274,6 +274,8 @@ primary_key_rules = {
     "TutorialProduceStep": [["tutorialType", "stepNumber", "tutorialStep", "stepType"], ["name"]],
     # "Voice": [[], []],
     "VoiceGroup": [["id", "voiceAssetId"], ["title"]],
+    "ExchangeItemCategory": [["exchangeId", "number", "categoryType", "resourceType", "itemType"], ["name"]],
+    "SupportCardProduceSkillFilter": [["id", "order"], ["title"]],
     "VoiceRoster": [["characterId", "assetId"], ["title"]],
     "Work": [["type"], ["name"]],
     # "WorkLevel": [[], []],
@@ -310,12 +312,12 @@ def save_json(data: list, name: str):
     3. If TestMode = True, append "TEST" to the string or string array in the "non-primary key list".
     """
     if not data:
-        return
+        return None
 
     # Get the rule corresponding to the name
     rule = primary_key_rules.get(name)
     if not rule or len(rule) < 2:
-        return
+        return None
 
     primary_keys = rule[0]  # First column (primary key)
     other_keys = rule[1]    # Second list (TEST may be added)
@@ -334,10 +336,10 @@ def save_json(data: list, name: str):
         )
         processed_data.append(filtered_record)
 
-    # Make first data has all key
-    # This can be removed when app can parse all key(also key type) properly.
-    # Currently there is a bug on finding type and find local key from data
-    # We must make sure first data has all key
+    # Make sure the first data has all keys
+    # This can be removed when the app can parse all keys(also key type) properly.
+    # Currently, there is a bug on finding type and local keys from data
+    # We must make sure the first data has all keys
     if not sort_records_fields(processed_data, all_keys):
         print(f"Failed to find super key object from {name}")
         
@@ -364,20 +366,20 @@ def sort_records_fields(records: List[dict], field_paths: list):
         if not isinstance(record, dict) or key not in record:
             return False
         record_value = record[key]
-        # No more sub object, we find all object from record by path 
+        # No more sub object, we find all objects from record by path
         if len(path) == 1:
             return True
         
-        # If there is obj use treversal to find value 
+        # If there is obj use traversal to find value
         if isinstance(record_value, dict):
             return hasPaths(record_value, path[1:])
 
-        # When obj is list, check all element 
+        # When obj is list, check all elements
         if isinstance(record_value, list):
             for item in record_value:
                 if isinstance(item, dict):
                     if hasPaths(item, path[1:]):
-                        # it has all subkey
+                        # it has all subkeys
                         return True
         # Failed to find value by key
         return False
@@ -396,7 +398,7 @@ def sort_records_fields(records: List[dict], field_paths: list):
 def filter_record_fields(record: dict, field_paths: list,
                          primary_keys: list, other_keys: list) -> dict:
     """
-    Given an original record, and a list of field paths field_paths to keep,
+    Given an original record and a list of field paths field_paths to keep,
     return a new dictionary containing only those fields (and their nested structure).
     If the path is in other_keys and TestMode = True, add "TEST" to the string or list of strings.
     """
@@ -405,7 +407,7 @@ def filter_record_fields(record: dict, field_paths: list,
         path = path_str.split(".")  # "descriptions.type" -> ["descriptions", "type"]
         value = get_nested_value(record, path)
         if value is not None:
-            # Append “TEST” to string/string list value if it belongs to a non-primary key list & TestMode = True
+            # Append “TEST” to a string / string list value if it belongs to a non-primary key list & TestMode = True
             if TestMode and (path_str in other_keys):
                 value = transform_value_for_test_mode(value)
             # Merge the fetched value into new_record, keeping the same nested structure
@@ -461,7 +463,7 @@ def merge_nested_value(target_dict: dict, path: list, value):
 
     key = path[0]
 
-    # If only the last level of key is left, write it directly
+    # If only the last level of the key is left, write it directly
     if len(path) == 1:
         target_dict[key] = value
         return
@@ -533,7 +535,6 @@ def convert_yaml_types(folder_path="./gakumasu-diff/orig"):
                     # Preprocess file: replace tabs with 4 spaces
                     with open(file_path, 'r', encoding='utf-8') as f:
                         content = f.read()
-
                     # content = content.replace('\t', '    ')  # Replace tab characters
                     content = content.replace(": \t", ": \"\t\"")  # Replace tab characters
                     content = content.replace("|\n", "|+\n") # Fix literal strings newline chomping
