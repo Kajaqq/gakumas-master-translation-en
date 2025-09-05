@@ -1,6 +1,7 @@
 import os
 import yaml
 import json
+import re
 from typing import List
 from yaml.reader import Reader
 
@@ -535,8 +536,7 @@ def convert_yaml_types(folder_path="./gakumasu-diff/orig"):
                     # Preprocess file: replace tabs with 4 spaces
                     with open(file_path, 'r', encoding='utf-8') as f:
                         content = f.read()
-                    # content = content.replace('\t', '    ')  # Replace tab characters
-                    content = content.replace(": \t", ": \"\t\"")  # Replace tab characters
+                    content = re.sub(r': (\t.*)', r': "\1"', content)  # Replace tab characters
                     content = content.replace("|\n", "|+\n") # Fix literal strings newline chomping
 
                     # Parsing YAML content
