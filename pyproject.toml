@@ -1,0 +1,6 @@
+[project]
+name = "gakumas-master-translation-en"
+version = "1.1.0"
+description = "gakumas translation helper"
+requires-python = ">=3.12"
+dependencies = []
