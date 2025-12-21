@@ -1,8 +1,34 @@
 import json
-import sys
 import os
+import sys
 
-def fill_back_translations(data_obj, primary_keys, trans_map):
+# Special rules for handling special cases of certain fields
+# Format: {"filename": {"field name": {"rule"} }}
+special_rules = {
+    "ProduceStory.json": {
+        "produceEventHintProduceConditionDescriptions": {
+            "is_empty": True,  # Replace the field with an empty array if it is a single empty string array
+        }
+    },
+    "Tutorial.json": {
+        "texts": {
+            "is_empty": True,  # Replace the field with an empty array if it is a single empty string array
+        }
+    },
+    "ConditionSet..json": {
+        "description": {
+            "is_empty": True,  # Replace the field with an empty array if it is a single empty string array
+        }
+    },
+    "IdolCardSkin.json": {
+        "name": {
+            "is_empty": True,  # Replace the field with an empty array if it is a single empty string array
+        }
+    },
+}
+
+
+def fill_back_translations(data_obj, primary_keys, trans_map, filename=None):
     """
     data_obj is a record of the original localized data;
     trans_map is the { fullKey: translatedValue } translated by third-party software
@@ -42,8 +68,19 @@ def fill_back_translations(data_obj, primary_keys, trans_map):
                     if fullKey in trans_map:
                         trans_data = trans_map[fullKey]
                         if trans_data.startswith("[LA_F]"):
-                            list_data = trans_data[len("[LA_F]"):].split("[LA_N_F]")
-                            obj[k] = list_data
+                            remaining = trans_data[len("[LA_F]"):]
+                            if remaining == "":
+                                obj[k] = []
+                            else:
+                                list_data = remaining.split("[LA_N_F]")
+                                if filename in special_rules and k in special_rules[filename]:
+                                    rule = special_rules[filename][k]
+                                    if "is_empty" in rule and len(list_data) == 1 and list_data[0] == "":
+                                        obj[k] = []
+                                    else:
+                                        obj[k] = list_data
+                                else:
+                                    obj[k] = list_data
                         else:
                             traverse(v, new_prefix)
                     else:
