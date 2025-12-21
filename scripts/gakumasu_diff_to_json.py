@@ -358,6 +358,28 @@ def save_json(data: list, name: str):
             primary_keys,
             other_keys
         )
+
+        # empty string arrays fix
+        if name == "ProduceStory" and "produceEventHintProduceConditionDescriptions" in filtered_record:
+            desc_array = filtered_record["produceEventHintProduceConditionDescriptions"]
+            if isinstance(desc_array, list) and len(desc_array) == 1 and desc_array[0] == "":
+                filtered_record["produceEventHintProduceConditionDescriptions"] = []
+
+        if name == "Tutorial" and "texts" in filtered_record:
+            desc_array = filtered_record["texts"]
+            if isinstance(desc_array, list) and len(desc_array) == 1 and desc_array[0] == "":
+                filtered_record["texts"] = []
+
+        if name == "ConditionSet" and "description" in filtered_record:
+            desc_array = filtered_record["description"]
+            if isinstance(desc_array, list) and len(desc_array) == 1 and desc_array[0] == "":
+                filtered_record["description"] = []
+
+        if name == "IdolCardSkin" and "name" in filtered_record:
+            desc_array = filtered_record["name"]
+            if isinstance(desc_array, list) and len(desc_array) == 1 and desc_array[0] == "":
+                filtered_record["name"] = []
+
         processed_data.append(filtered_record)
 
     # Make sure the first data has all keys
