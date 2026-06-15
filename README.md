@@ -1,12 +1,8 @@
 # gakumas-master-translation-en
 
-## WARNING: The Chinese version isn't up to date with this repo
-[简体中文](README_CN.md) | English
-
-
 # Updating with Scripts
 
-### Warning: This process differs significantly from the manual process described below and wont provide the same results
+### Warning: This process differs significantly from the manual process described below and won't provide the same results
 #### For Windows use the .bat files instead of make
 - Use `make update` to update the MasterDB (`orig` and `json`) file from gakumas-diff
 - Use `make export-db` to export the database files - this should only be run once to generate origin files
@@ -32,7 +28,7 @@
 ## Translation using Starlit Translator
 1. Run `update.bat` to get the newest data and convert the YAML files from the `gakumasu-diff` repository into JSON files readable by the plugin. At this stage, the JSON contains the original Japanese text.
 2. Run `export_db_json.py` to convert the generated JSON into the `key: original Japanese text` format.
-3. Run `pretranslate_process.py --export_csv` to get `jp:en` csv files, this will generate files in the `pretranslate_todo/full_out` folder'\
+3. Run `pretranslate_process.py --export_csv` to get `jp:en` csv files, this will generate files in the `pretranslate_todo/full_out` folder\
 3a. **The 2 steps above can also be done at once with `export-db-csv.bat`**
 4. Perform translation using Starlit Translator, after translating copy the data back to the `pretranslate_todo/full_out`
 5. Run `csv_to_json.bat` or `csv_json_bridge.py --mass_convert` to convert csv files back to json.
