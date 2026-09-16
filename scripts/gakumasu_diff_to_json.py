@@ -59,7 +59,7 @@ primary_key_rules = {
     # "ForceAppVersion": [[], []],
     # "GashaAnimation": [[], []],
     # "GashaAnimationStep": [[], []],
-    "GashaButton": [["id", "order"], ["name", "description", "appealText", "highappealText"]],
+    "GashaButton": [["id", "order"], ["name", "description", "appealText", "highAppealText","bottomAppealText"]],
     # "GuildDonationItem": [[], []],
     # "GuildReaction": [[], []],
     "GvgRaid": [["id", "order"], ["name"]],
@@ -333,7 +333,7 @@ primary_key_rules = {
     "StoryEvent": [["id"], ["title"]],
     "StoryGroup": [["id"], ["title"]],
     "SupportCard": [["id", "upgradeProduceCardProduceDescriptions.produceDescriptionType", "upgradeProduceCardProduceDescriptions.examDescriptionType", "upgradeProduceCardProduceDescriptions.examEffectType", 
-                     "upgradeProduceCardProduceDescriptions.produceCardGrowEffectType", "upgradeProduceCardProduceDescriptions.produceCardCategory", "upgradeProduceCardProduceDescriptions.produceCardMovePositionType", "upgradeProduceCardProduceDescriptions.produceStepType"],
+                     "upgradeProduceCardProduceDescriptions.produceCardGrowEffectType", "upgradeProduceCardProduceDescriptions.produceCardCategory", "upgradeProduceCardProduceDescriptions.produceCardMovePositionType", "upgradeProduceCardProduceDescriptions.produceStepType",  "upgradeProduceCardProduceDescriptions.produceStepBusinessType", "upgradeProduceCardProduceDescriptions.targetId"],
                     ["name", "upgradeProduceCardProduceDescriptions.text"]],  # 嵌套List Obj
     # "SupportCardBonus": [[], []],
     "SupportCardFlavor": [["supportCardId", "number"], ["text"]],
